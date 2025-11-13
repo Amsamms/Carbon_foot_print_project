@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIDOR Refinery — GHG Inventory 2025</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ==================== COVER PAGE ==================== -->
+        <div class="cover">
+            <div class="cover-content">
+                <h1>MIDOR Refinery</h1>
+                <div class="subtitle">Organizational GHG Inventory</div>
+                <div class="subtitle">Operational Control Approach</div>
+                <div class="year-badge">Base Year 2025</div>
+            </div>
+        </div>
+
+        <!-- ==================== PAGE 2: ABOUT THIS REPORT ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">About this Report</h2>
+                <p><strong>MIDOR Refinery's first comprehensive greenhouse gas inventory report for base year 2025</strong></p>
+            </div>
+
+            <h3>Standards & Compliance</h3>
+            <p>This inventory has been prepared in conformance with:</p>
+            <ul class="icon-list">
+                <li><strong>ISO 14064-1:2018</strong> — Specification with guidance at the organization level for quantification and reporting of greenhouse gas emissions and removals</li>
+                <li><strong>ISO 14069:2013</strong> — Guidance for the application of ISO 14064-1</li>
+                <li><strong>GHG Protocol Corporate Accounting and Reporting Standard</strong> — World Resources Institute (WRI) and World Business Council for Sustainable Development (WBCSD)</li>
+            </ul>
+
+            <h3>Reporting Approach & Boundary</h3>
+            <p><strong>Consolidation Method:</strong> Operational Control</p>
+            <p><strong>Language:</strong> English</p>
+            <p><strong>GWP Set:</strong> IPCC AR6 (Sixth Assessment Report), 100-year time horizon</p>
+
+            <h3>Scopes Included in this Inventory</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="scope-badge scope-badge-1">Scope 1</span>
+                    <h4>Direct GHG Emissions</h4>
+                    <p>All direct emissions from sources within MIDOR's operational control boundary, including:</p>
+                    <ul>
+                        <li>Stationary combustion (heaters, boilers, incinerators)</li>
+                        <li>Process emissions (H₂ production, catalyst regeneration, etc.)</li>
+                        <li>Fugitive emissions (storage tanks, loading, refrigerants)</li>
+                        <li>Mobile combustion (vehicles, forklifts)</li>
+                        <li>Flaring</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="scope-badge scope-badge-2">Scope 2</span>
+                    <h4>Indirect GHG from Energy</h4>
+                    <p>Emissions from purchased electricity only. Suppliers:</p>
+                    <ul>
+                        <li><strong>MIDELEC</strong> (primary supplier)</li>
+                        <li><strong>National Grid</strong> (backup supply)</li>
+                    </ul>
+                    <p><strong>Method:</strong> Location-based (market-based to be developed)</p>
+                </div>
+                <div class="card">
+                    <span class="scope-badge scope-badge-3">Scope 3</span>
+                    <h4>Other Indirect Emissions</h4>
+                    <p>Two categories included:</p>
+                    <ul>
+                        <li><strong>Category 7:</strong> Employee Commuting</li>
+                        <li><strong>Category 11:</strong> Use of Sold Products (combustion of refined products sold)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Assurance</h3>
+            <div class="callout-warning callout">
+                <strong>Note:</strong> This inventory has not yet been externally assured. A placeholder section (Appendix E) is included for future third-party verification statements.
+            </div>
+
+            <div class="credits">
+                <h4>Report Prepared By</h4>
+                <ul class="credits-list">
+                    <li>Ahmed Mohamed Sabri</li>
+                    <li>Amr Hassan Abu Mady</li>
+                    <li>Tareq Mohamed Salama</li>
+                    <li>Ahmed Adel Mabrouk</li>
+                </ul>
+            </div>
+
+            <h3>Disclaimer</h3>
+            <p>This report contains forward-looking statements regarding emission reduction targets and initiatives. Actual results may differ materially from projections due to various factors including operational changes, regulatory requirements, technological developments, and economic conditions.</p>
+
+            <div class="placeholder-note">
+                ⚠️ <strong>Data Note:</strong> This report contains dummy placeholder values marked "to be replaced" throughout. All emission factors, activity data, and calculations are illustrative and must be updated with actual measured data before publication or official reporting.
+            </div>
+        </div>
+
+        <!-- ==================== SECTION 1: MIDOR AT A GLANCE ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 1: MIDOR at a Glance</h2>
+                <p>Understanding our refinery operations and emission footprint</p>
+            </div>
+
+            <h3>Site Overview</h3>
+            <figure>
+                <img src="assets/img/MIDPR_map.PNG" alt="MIDOR Refinery Site Map" class="map-image">
+                <figcaption>Figure 1-1: MIDOR Refinery geographical footprint and site layout</figcaption>
+            </figure>
+
+            <h3>Operational Profile</h3>
+            <div class="card-grid">
+                <div class="tile">
+                    <div class="tile-icon">🏭</div>
+                    <h3>Crude Throughput</h3>
+                    <div class="value">160,000</div>
+                    <p>Barrels per Stream Day (BPSD)</p>
+                </div>
+                <div class="tile">
+                    <div class="tile-icon">⚡</div>
+                    <h3>Energy Sources</h3>
+                    <div class="value">2</div>
+                    <p>MIDELEC (primary) + National Grid (backup)</p>
+                </div>
+                <div class="tile">
+                    <div class="tile-icon">📦</div>
+                    <h3>Main Products</h3>
+                    <div class="value">8+</div>
+                    <p>LPG, Gasoline, Jet, Diesel, Fuel Oil, Coke, Sulfur</p>
+                </div>
+            </div>
+
+            <h3>Main Product Slate</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Markets</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>LPG</strong></td>
+                        <td>Liquefied Petroleum Gas</td>
+                        <td>Domestic & Regional</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gasoline</strong></td>
+                        <td>Motor gasoline (various grades)</td>
+                        <td>Domestic</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jet Fuel / Kerosene</strong></td>
+                        <td>Aviation turbine fuel</td>
+                        <td>Exported</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diesel (ULSD)</strong></td>
+                        <td>Ultra-low sulfur diesel</td>
+                        <td>Domestic (portion exported)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fuel Oil</strong></td>
+                        <td>Heavy fuel oil</td>
+                        <td>Industrial / Marine</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Petroleum Coke</strong></td>
+                        <td>From delayed coking unit</td>
+                        <td>Industrial</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sulfur</strong></td>
+                        <td>Elemental sulfur recovery</td>
+                        <td>Industrial / Fertilizer</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Asphalt</strong></td>
+                        <td>Road construction material</td>
+                        <td>Domestic</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 1-1: MIDOR refinery main products and market destinations</p>
+
+            <h3>Refinery Complexes & Process Units</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>🔧 Crude / Vacuum Distillation</h4>
+                    <p>U_01, U_17 — Primary fractionation and separation</p>
+                </div>
+                <div class="card">
+                    <h4>⚗️ Catalytic Reforming</h4>
+                    <p>U_04 CCR/Platformer, U_07 Penex/Isomerization — Octane enhancement</p>
+                </div>
+                <div class="card">
+                    <h4>🧪 Hydrotreating Complex</h4>
+                    <p>U_02/03, U_08, U_18, U_19, U_20 — Sulfur and contaminant removal</p>
+                </div>
+                <div class="card">
+                    <h4>💨 Hydrogen Production</h4>
+                    <p>U_09, U_21 SMR — Steam methane reforming for hydrogen supply</p>
+                </div>
+                <div class="card">
+                    <h4>♨️ Delayed Coking</h4>
+                    <p>U_11 (incl. Cell 3) — Bottom-of-barrel upgrading</p>
+                </div>
+                <div class="card">
+                    <h4>🔥 Sulfur Recovery</h4>
+                    <p>U_13, U_22 SRU/Amine — Acid gas treatment and elemental sulfur production</p>
+                </div>
+                <div class="card">
+                    <h4>⚙️ Utilities</h4>
+                    <p>U_37 Boilers, substations — Steam, power, cooling water, air</p>
+                </div>
+                <div class="card">
+                    <h4>🔥 Flare & Offsites</h4>
+                    <p>Flare system, tank farm, marine terminal — Safety relief and storage</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SECTION 2: PRINCIPLES & GOVERNANCE ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 2: Principles & Governance</h2>
+                <p>Foundation of our GHG inventory management</p>
+            </div>
+
+            <h3>Inventory Principles</h3>
+            <p>Our GHG inventory adheres to the five core principles of ISO 14064-1 and the GHG Protocol:</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>1. Relevance</h4>
+                    <p>All significant emission sources have been identified and included. Boundary reflects operational control and material activities.</p>
+                </div>
+                <div class="card">
+                    <h4>2. Completeness</h4>
+                    <p>All applicable Scope 1 sources included. Scope 2 covers all purchased electricity. Scope 3 includes Categories 7 and 11.</p>
+                </div>
+                <div class="card">
+                    <h4>3. Consistency</h4>
+                    <p>Methods and boundaries defined for multi-year tracking. Recalculation policy established for base year adjustments.</p>
+                </div>
+                <div class="card">
+                    <h4>4. Accuracy</h4>
+                    <p>Data sourced from calibrated meters, DCS/PI systems, lab analysis, and invoices. Uncertainty assessed per category.</p>
+                </div>
+                <div class="card">
+                    <h4>5. Transparency</h4>
+                    <p>All methods, data sources, emission factors, assumptions, and exclusions documented and disclosed in this report.</p>
+                </div>
+            </div>
+
+            <h3>Roles & Responsibilities</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Responsibility</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Inventory Manager</strong></td>
+                        <td>Overall coordination, data compilation, calculation oversight, reporting</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Process Engineers</strong></td>
+                        <td>Activity data collection from units (fuel consumption, production rates, stack tests)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Laboratory</strong></td>
+                        <td>Fuel composition analysis (GC, calorific values, carbon content)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Maintenance</strong></td>
+                        <td>Refrigerant tracking, equipment records, LDAR program data</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Procurement</strong></td>
+                        <td>Electricity invoices, diesel fuel purchases, mobile fuel records</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HSE Department</strong></td>
+                        <td>QA/QC oversight, regulatory compliance, external reporting</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Management</strong></td>
+                        <td>Strategic review, target setting, approval of inventory and public disclosure</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 2-1: GHG inventory roles and responsibilities</p>
+
+            <h3>Data Flow & Quality Control</h3>
+            <div class="callout">
+                <strong>Data Flow Summary:</strong> Activity data → Unit engineers → Centralized database → Emission calculations → QC review → Management approval → External reporting
+            </div>
+
+            <h4>Quality Assurance / Quality Control (QA/QC)</h4>
+            <ul>
+                <li><strong>Meter Calibration:</strong> All flow meters and analytical instruments on annual calibration schedule</li>
+                <li><strong>Data Validation:</strong> Cross-checks between DCS, PI historian, and manual logs</li>
+                <li><strong>Calculation Review:</strong> Independent verification of emission factors and formulas</li>
+                <li><strong>Peer Review:</strong> Internal technical review before finalization</li>
+                <li><strong>Change Control:</strong> Documented process for methodology or boundary changes</li>
+                <li><strong>Archiving:</strong> All source data, calculations, and supporting documents retained for 7 years</li>
+            </ul>
+        </div>
+
+        <!-- ==================== SECTION 3: BOUNDARIES ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 3: Boundaries</h2>
+                <p>Defining our organizational and operational boundaries</p>
+            </div>
+
+            <h3>Organizational Boundary</h3>
+            <p><strong>Consolidation Approach:</strong> <span class="scope-badge scope-badge-1">Operational Control</span></p>
+            <p>MIDOR accounts for 100% of GHG emissions from operations over which it has full authority to introduce and implement operating policies, health, safety, and environmental policies.</p>
+
+            <div class="callout">
+                <strong>Operational Control Defined:</strong> MIDOR has operational control over all facilities within the refinery fence line. This includes all process units, utilities, storage, flare systems, and on-site mobile equipment.
+            </div>
+
+            <h3>Operational Boundary: Scope Overview</h3>
+
+            <h4><span class="scope-badge scope-badge-1">Scope 1: Direct GHG Emissions</span></h4>
+            <p><strong>All direct emissions from sources owned or controlled by MIDOR within the refinery boundary.</strong></p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Sources Included</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Stationary Combustion</strong></td>
+                        <td>Heaters, boilers, incinerators fired with fuel gas, fuel oil, diesel</td>
+                        <td>✓ Included</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flaring</strong></td>
+                        <td>Continuous and emergency flare emissions (measured via flow meter)</td>
+                        <td>✓ Included</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Process Emissions</strong></td>
+                        <td>H₂ production (SMR), catalyst regeneration, coke drum steaming, SRU tail gas oxidation</td>
+                        <td>✓ Included</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fugitive Emissions</strong></td>
+                        <td>Storage tanks (breathing/working losses), product loading, wastewater CH₄/N₂O, refrigerant leaks, CO₂ fire extinguishers</td>
+                        <td>✓ Included</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mobile Combustion</strong></td>
+                        <td>On-site vehicles: forklifts, fire trucks, maintenance vehicles, shuttle buses (diesel)</td>
+                        <td>✓ Included</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 3-1: Scope 1 emission sources</p>
+
+            <h4><span class="scope-badge scope-badge-2">Scope 2: Indirect Emissions from Purchased Energy</span></h4>
+            <p><strong>Emissions from purchased electricity consumed by MIDOR.</strong></p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Energy Type</th>
+                        <th>Supplier</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Electricity</strong></td>
+                        <td>MIDELEC (primary)</td>
+                        <td>Location-based</td>
+                        <td>✓ Included</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Electricity</strong></td>
+                        <td>National Grid (backup)</td>
+                        <td>Location-based</td>
+                        <td>✓ Included</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Steam</strong></td>
+                        <td>Self-generated (not purchased)</td>
+                        <td>N/A</td>
+                        <td>Scope 1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 3-2: Scope 2 energy sources</p>
+
+            <div class="callout">
+                <strong>Market-Based Method:</strong> Not currently applied. MIDOR does not yet purchase contractual instruments (renewable energy certificates, power purchase agreements). Market-based accounting will be implemented when such instruments are acquired.
+            </div>
+
+            <h4><span class="scope-badge scope-badge-3">Scope 3: Other Indirect Emissions</span></h4>
+            <p><strong>Selected categories of value chain emissions.</strong></p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cat. 7: Employee Commuting</strong></td>
+                        <td>Emissions from employee travel between home and workplace</td>
+                        <td>✓ Included</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cat. 11: Use of Sold Products</strong></td>
+                        <td>Combustion of refined products sold (gasoline, diesel, jet fuel, LPG, fuel oil, coke)</td>
+                        <td>✓ Included</td>
+                    </tr>
+                    <tr>
+                        <td>All other Scope 3 categories</td>
+                        <td>Purchased goods, capital goods, waste, business travel, etc.</td>
+                        <td>Not yet quantified</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 3-3: Scope 3 categories</p>
+
+            <h3>Exclusions & Rationale</h3>
+            <p>The following sources or activities are explicitly excluded from this inventory:</p>
+            <ul>
+                <li><strong>Biomass CO₂:</strong> Minimal to zero biomass use; if present in future, will be separately tracked per ISO 14064-1</li>
+                <li><strong>Scope 3 Cat. 1-6, 8-10, 12-15:</strong> Not yet quantified; future inventories may expand coverage</li>
+                <li><strong>Downstream leased assets:</strong> MIDOR does not lease assets to third parties</li>
+                <li><strong>Land use change:</strong> No land use change activities within reporting period</li>
+            </ul>
+
+            <div class="placeholder-note">
+                ⚠️ Exclusions list is subject to annual review. Any material category excluded must be justified based on relevance and materiality thresholds.
+            </div>
+        </div>
+
+        <!-- ==================== SECTION 4: METHODS & FACTORS ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 4: Methods & Factors</h2>
+                <p>Quantification approaches and emission factors</p>
+            </div>
+
+            <h3>GHG Gases Included</h3>
+            <p>This inventory quantifies the following greenhouse gases, expressed as carbon dioxide equivalent (CO₂e):</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Gas</th>
+                        <th>Chemical Formula</th>
+                        <th>GWP (AR6, 100-yr)</th>
+                        <th>Primary Sources at MIDOR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Carbon Dioxide</strong></td>
+                        <td>CO₂</td>
+                        <td>1</td>
+                        <td>Combustion, process (SMR, SRU)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Methane</strong></td>
+                        <td>CH₄</td>
+                        <td>27.9</td>
+                        <td>Combustion slip, fugitives, wastewater</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nitrous Oxide</strong></td>
+                        <td>N₂O</td>
+                        <td>273</td>
+                        <td>Combustion, wastewater</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hydrofluorocarbons</strong></td>
+                        <td>HFCs</td>
+                        <td>Variable (hundreds to thousands)</td>
+                        <td>Refrigerants (if present)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 4-1: GHG gases and global warming potentials (Source: IPCC AR6, 2021)</p>
+
+            <div class="placeholder-note">
+                ⚠️ GWP values are from IPCC AR6 (latest). These must be applied consistently throughout the inventory.
+            </div>
+
+            <h3>Quantification Methods Register</h3>
+            <p>The following table summarizes the calculation approach for each emission category:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Source Category</th>
+                        <th>Method Type</th>
+                        <th>Activity Data Source</th>
+                        <th>Emission Factor Reference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fuel Gas Combustion</strong></td>
+                        <td>Carbon mass balance</td>
+                        <td>DCS flow meters, lab GC analysis</td>
+                        <td>API Compendium / Site-specific</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fuel Oil Combustion</strong></td>
+                        <td>Fuel consumption × EF</td>
+                        <td>Tank level / invoices</td>
+                        <td>API Compendium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diesel Combustion</strong></td>
+                        <td>Fuel consumption × EF</td>
+                        <td>Fuel receipts / vehicle logs</td>
+                        <td>IPCC 2006</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flaring</strong></td>
+                        <td>Flow meter + composition + DRE</td>
+                        <td>Flare header flow meter, GC</td>
+                        <td>EPA AP-42 / DRE 99.9%, CH₄ slip 0.01%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H₂ Production (SMR)</strong></td>
+                        <td>Process mass balance</td>
+                        <td>H₂ production rate, natural gas feed</td>
+                        <td>Stoichiometric + combustion</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Catalyst Regeneration</strong></td>
+                        <td>Coke burn-off mass balance</td>
+                        <td>Coke-on-catalyst, regen rate</td>
+                        <td>Site-specific / Stack test</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Storage Tanks</strong></td>
+                        <td>EPA TANKS or API Chapter 7</td>
+                        <td>Tank dimensions, throughput, product properties</td>
+                        <td>EPA / API</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Product Loading</strong></td>
+                        <td>EPA AP-42 factors</td>
+                        <td>Loading volumes, product vapor pressure</td>
+                        <td>EPA AP-42</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wastewater</strong></td>
+                        <td>IPCC guidelines</td>
+                        <td>COD/BOD load, flow rate, treatment type</td>
+                        <td>IPCC 2006 Vol. 5</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Refrigerants</strong></td>
+                        <td>Mass balance (purchases - disposals)</td>
+                        <td>Maintenance logs, refrigerant receipts</td>
+                        <td>IPCC AR6 GWPs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mobile Combustion</strong></td>
+                        <td>Fuel consumption × EF</td>
+                        <td>Fuel logs per vehicle type</td>
+                        <td>IPCC 2006 / DEFRA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Purchased Electricity</strong></td>
+                        <td>Consumption × Grid EF (location-based)</td>
+                        <td>Electricity invoices (MWh)</td>
+                        <td>Supplier-specific or national grid average</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Use of Sold Products</strong></td>
+                        <td>Product sold × End-use combustion EF</td>
+                        <td>Sales invoices (volume/mass)</td>
+                        <td>IPCC / EPA / Product LHV & carbon content</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 4-2: Methods register for GHG quantification</p>
+
+            <h3>Key Equations</h3>
+
+            <h4>Scope 1: Stationary Combustion</h4>
+            <div class="equation">
+                <code>
+CO₂ = Fuel_consumed × Carbon_fraction × (44/12) × Oxidation_factor<br>
+CH₄ = Fuel_consumed × EF_CH4 × GWP_CH4<br>
+N₂O = Fuel_consumed × EF_N2O × GWP_N2O<br>
+Total_CO₂e = CO₂ + CH₄_as_CO₂e + N₂O_as_CO₂e
+                </code>
+            </div>
+
+            <h4>Scope 2: Purchased Electricity</h4>
+            <div class="equation">
+                <code>
+Scope2_emissions = Σ (MWh_supplier × EF_supplier)
+                </code>
+            </div>
+
+            <h4>Scope 3 Category 11: Use of Sold Products</h4>
+            <div class="equation">
+                <code>
+Cat11_emissions = Σ (Product_sold × Use-phase_EF_product)
+                </code>
+            </div>
+
+            <h3>Electricity Emission Factors (Location-Based)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Supplier</th>
+                        <th>Emission Factor (tCO₂e/MWh)</th>
+                        <th>Source</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>MIDELEC</strong></td>
+                        <td>0.55</td>
+                        <td>Placeholder (supplier data pending)</td>
+                        <td class="placeholder-note">TO BE REPLACED</td>
+                    </tr>
+                    <tr>
+                        <td><strong>National Grid</strong></td>
+                        <td>0.60</td>
+                        <td>Placeholder (national average estimate)</td>
+                        <td class="placeholder-note">TO BE REPLACED</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 4-3: Electricity grid emission factors</p>
+
+            <h3>Missing Data & Estimation</h3>
+            <p>Where primary data is unavailable, the following hierarchy is applied:</p>
+            <ol>
+                <li><strong>Use prior year data</strong> (if operational conditions similar)</li>
+                <li><strong>Engineering estimates</strong> (process modeling, mass balance)</li>
+                <li><strong>Conservative assumptions</strong> (upper-bound estimates to avoid underreporting)</li>
+                <li><strong>Industry averages</strong> (API, CONCAWE, peer refineries with similar configurations)</li>
+            </ol>
+            <p>All estimations are clearly documented in the activity-to-method mapping (Appendix C).</p>
+        </div>
+
+        <!-- ==================== SECTION 5: RESULTS OVERVIEW ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 5: Results Overview</h2>
+                <p>MIDOR's 2025 GHG footprint at a glance</p>
+            </div>
+
+            <h3>Total Organizational Footprint</h3>
+            <div class="card-grid">
+                <div class="tile">
+                    <div class="tile-icon">🌍</div>
+                    <h3>Total Inventory</h3>
+                    <div class="value">37.05</div>
+                    <p>Million tCO₂e</p>
+                </div>
+                <div class="tile" style="background: linear-gradient(135deg, var(--color-scope1) 0%, var(--color-warm) 100%);">
+                    <div class="tile-icon">🔥</div>
+                    <h3>Scope 1</h3>
+                    <div class="value">1.80</div>
+                    <p>Million tCO₂e (4.9%)</p>
+                </div>
+                <div class="tile" style="background: linear-gradient(135deg, var(--color-scope2) 0%, var(--color-blue) 100%);">
+                    <div class="tile-icon">⚡</div>
+                    <h3>Scope 2</h3>
+                    <div class="value">0.25</div>
+                    <p>Million tCO₂e (0.7%)</p>
+                </div>
+                <div class="tile" style="background: linear-gradient(135deg, var(--color-scope3) 0%, #0F172A 100%);">
+                    <div class="tile-icon">🛢️</div>
+                    <h3>Scope 3</h3>
+                    <div class="value">35.00</div>
+                    <p>Million tCO₂e (94.4%)</p>
+                </div>
+            </div>
+
+            <div class="callout">
+                <strong>Context:</strong> Scope 3 Category 11 (use of sold products) dominates the footprint, which is typical for refineries. Scope 1+2 (operational control emissions) total 2.05 MtCO₂e.
+            </div>
+
+            <h3>Emissions by Scope</h3>
+            <div id="chart-chevron-share" class="chart-container"></div>
+            <p class="chart-caption">Figure 5-1: GHG inventory distribution by scope</p>
+
+            <div class="placeholder-note">
+                ⚠️ All values are dummy placeholders and must be updated with actual 2025 data.
+            </div>
+
+            <h3>Key Insights</h3>
+            <ul class="icon-list">
+                <li>Direct operational emissions (Scope 1+2) represent ~5.6% of total footprint</li>
+                <li>Use of sold products (Scope 3 Cat. 11) accounts for 94.4% — inherent to refining business model</li>
+                <li>Stationary combustion is the largest Scope 1 category (~65%)</li>
+                <li>Electricity sourcing from MIDELEC + National Grid backup accounts for all Scope 2</li>
+                <li>Employee commute (Scope 3 Cat. 7) is minimal at ~0.03 MtCO₂e</li>
+            </ul>
+        </div>
+
+        <!-- ==================== SECTION 6: SCOPE 1 DETAILS ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 6: Scope 1 — Direct Emissions</h2>
+                <p>Detailed breakdown of MIDOR's direct GHG emissions</p>
+            </div>
+
+            <h3>Scope 1 Summary</h3>
+            <p><strong>Total Scope 1:</strong> 1,800,000 tCO₂e</p>
+
+            <div id="chart-scope1-category" class="chart-container"></div>
+            <p class="chart-caption">Figure 6-1: Scope 1 emissions by category</p>
+
+            <h3>Category Breakdown</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Emissions (tCO₂e)</th>
+                        <th>% of Scope 1</th>
+                        <th>Number of Sources</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Stationary Combustion</strong></td>
+                        <td>1,170,000</td>
+                        <td>65.0%</td>
+                        <td>20 sources</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Process Emissions</strong></td>
+                        <td>324,000</td>
+                        <td>18.0%</td>
+                        <td>6 sources</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fugitive Emissions</strong></td>
+                        <td>216,000</td>
+                        <td>12.0%</td>
+                        <td>9 sources</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mobile Combustion</strong></td>
+                        <td>90,000</td>
+                        <td>5.0%</td>
+                        <td>4 vehicle categories</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 6-1: Scope 1 emissions by category</p>
+
+            <h3>Top Emission Sources</h3>
+            <div id="chart-scope1-heat" class="chart-container"></div>
+            <p class="chart-caption">Figure 6-2: Top 20 Scope 1 emission sources (heat map)</p>
+
+            <h3>Stationary Combustion Details</h3>
+            <p>Fired heaters and boilers account for the majority of Scope 1 emissions. Key units include:</p>
+            <ul>
+                <li><strong>U_01 Crude Heater:</strong> High throughput crude distillation heater</li>
+                <li><strong>U_04 CCR Platformer:</strong> Catalyst regeneration with combustion component</li>
+                <li><strong>U_11 Delayed Coker:</strong> Heaters plus coke drum steaming</li>
+                <li><strong>U_09 & U_21 H₂ Plants:</strong> SMR furnaces with process CO₂</li>
+                <li><strong>U_37 Boilers:</strong> Central steam generation</li>
+                <li><strong>U_13 & U_22 Incinerators:</strong> Tail gas and amine regeneration</li>
+            </ul>
+
+            <h3>GHG Composition (Scope 1)</h3>
+            <div class="chart-row">
+                <div id="chart-scope1-gas" class="chart-container"></div>
+            </div>
+            <p class="chart-caption">Figure 6-3: Scope 1 GHG composition (CO₂, CH₄, N₂O as CO₂e)</p>
+
+            <p><strong>Gas breakdown:</strong></p>
+            <ul>
+                <li>CO₂: ~96.5% (from combustion and process sources)</li>
+                <li>CH₄ (as CO₂e): ~2.8% (combustion slip, fugitives, wastewater)</li>
+                <li>N₂O (as CO₂e): ~0.7% (combustion, wastewater)</li>
+            </ul>
+
+            <h3>Process Emissions Highlights</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Process Unit</th>
+                        <th>Emission Source</th>
+                        <th>Emissions (tCO₂e)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>U_09 H₂ Plant</strong></td>
+                        <td>SMR process CO₂ + furnace combustion</td>
+                        <td>54,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>U_21 H₂ Plant</strong></td>
+                        <td>SMR process CO₂ + furnace combustion</td>
+                        <td>54,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>U_04 Catalyst Regeneration</strong></td>
+                        <td>Coke burn-off on platinum catalyst</td>
+                        <td>54,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>U_11 Coke Drum Steaming</strong></td>
+                        <td>Residual hydrocarbon release during steaming</td>
+                        <td>54,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>U_13 SRU</strong></td>
+                        <td>Tail gas oxidation to SO₂ and CO₂</td>
+                        <td>54,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>U_22 SRU</strong></td>
+                        <td>Tail gas oxidation to SO₂ and CO₂</td>
+                        <td>54,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 6-2: Process emission sources (dummy allocations)</p>
+
+            <h3>Fugitive Emissions Details</h3>
+            <p>Fugitive emissions arise from non-point releases throughout the refinery:</p>
+            <ul>
+                <li><strong>Storage Tanks:</strong> Breathing and working losses from crude, product tanks (LPG, naphtha, kerosene, diesel)</li>
+                <li><strong>Product Loading:</strong> Truck loading displacement emissions</li>
+                <li><strong>Wastewater Treatment:</strong> CH₄ and N₂O from biological treatment (U_54/55)</li>
+                <li><strong>Refrigerant Leaks:</strong> HFC losses from air conditioning systems</li>
+                <li><strong>Fire Extinguishers:</strong> CO₂ discharge from testing/use</li>
+            </ul>
+        </div>
+
+        <!-- ==================== SECTION 7: SCOPE 2 DETAILS ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 7: Scope 2 — Purchased Electricity</h2>
+                <p>Indirect emissions from energy consumption</p>
+            </div>
+
+            <h3>Scope 2 Summary</h3>
+            <p><strong>Total Scope 2 (Location-Based):</strong> 250,000 tCO₂e</p>
+
+            <div id="chart-scope2-suppliers" class="chart-container"></div>
+            <p class="chart-caption">Figure 7-1: Scope 2 emissions by electricity supplier</p>
+
+            <h3>Electricity Consumption & Emissions</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Supplier</th>
+                        <th>Consumption (MWh)</th>
+                        <th>Emission Factor (tCO₂e/MWh)</th>
+                        <th>Emissions (tCO₂e)</th>
+                        <th>% of Scope 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>MIDELEC</strong></td>
+                        <td>363,636</td>
+                        <td>0.55</td>
+                        <td>200,000</td>
+                        <td>80%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>National Grid</strong></td>
+                        <td>83,333</td>
+                        <td>0.60</td>
+                        <td>50,000</td>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td>446,969</td>
+                        <td>-</td>
+                        <td>250,000</td>
+                        <td>100%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 7-1: Scope 2 electricity consumption and emissions (location-based method)</p>
+
+            <div class="placeholder-note">
+                ⚠️ Emission factors are placeholders. Actual supplier-specific or national grid emission factors must be obtained from:
+                <ul>
+                    <li>Direct supplier disclosure (MIDELEC)</li>
+                    <li>National authority (Egyptian Electricity Holding Company or equivalent)</li>
+                    <li>IEA / UNFCCC national inventory reports</li>
+                </ul>
+            </div>
+
+            <h3>Location-Based vs. Market-Based</h3>
+            <div class="callout">
+                <strong>Current Approach: Location-Based</strong><br>
+                Emissions calculated using the average emission factor of the grid(s) from which electricity is consumed.
+                <br><br>
+                <strong>Market-Based (Future):</strong><br>
+                When MIDOR procures contractual instruments such as:
+                <ul>
+                    <li>Renewable Energy Certificates (RECs)</li>
+                    <li>Power Purchase Agreements (PPAs) with specific generators</li>
+                    <li>Supplier-specific emission rate contracts</li>
+                </ul>
+                Market-based Scope 2 will be calculated and reported alongside location-based.
+            </div>
+
+            <h3>Electricity Intensity</h3>
+            <p>Electricity consumption per unit of crude processed:</p>
+            <p><strong>446,969 MWh / 2,920 kton crude = 153 MWh / kton crude</strong></p>
+            <p class="text-gray" style="font-size: 0.9rem;">This metric will be tracked annually to monitor energy efficiency improvements.</p>
+        </div>
+
+        <!-- ==================== SECTION 8: SCOPE 3 DETAILS ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 8: Scope 3 — Value Chain Emissions</h2>
+                <p>Indirect emissions from employee commuting and use of sold products</p>
+            </div>
+
+            <h3>Scope 3 Summary</h3>
+            <p><strong>Total Scope 3:</strong> 35,000,000 tCO₂e</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Emissions (tCO₂e)</th>
+                        <th>% of Scope 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Category 7: Employee Commuting</strong></td>
+                        <td>30,000</td>
+                        <td>0.09%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Category 11: Use of Sold Products</strong></td>
+                        <td>34,970,000</td>
+                        <td>99.91%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td>35,000,000</td>
+                        <td>100%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 8-1: Scope 3 emissions by category</p>
+
+            <h3>Category 7: Employee Commuting</h3>
+            <p><strong>Total:</strong> 30,000 tCO₂e</p>
+            <p>Calculated based on employee survey data (source: Administration — Ayman Sabry).</p>
+            <p><strong>Methodology:</strong> Number of employees × Average commute distance × Work days per year × Emission factor by transport mode</p>
+            <div class="placeholder-note">
+                ⚠️ Actual employee commute data (headcount, distances, modes) to be collected via HR survey.
+            </div>
+
+            <h3>Category 11: Use of Sold Products</h3>
+            <p><strong>Total:</strong> 34,970,000 tCO₂e</p>
+            <p>Emissions from combustion of refined products sold by MIDOR. This is the single largest category in the inventory, inherent to the refining business model.</p>
+
+            <div id="chart-scope3-products" class="chart-container"></div>
+            <p class="chart-caption">Figure 8-1: Scope 3 Category 11 emissions by product</p>
+
+            <h3>Product-Level Emissions (Use Phase)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Emissions (tCO₂e)</th>
+                        <th>% of Cat. 11</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Diesel / Gasoil</strong></td>
+                        <td>12,239,500</td>
+                        <td>35.0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gasoline</strong></td>
+                        <td>10,491,000</td>
+                        <td>30.0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jet Fuel / Kerosene</strong></td>
+                        <td>5,245,500</td>
+                        <td>15.0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fuel Oil</strong></td>
+                        <td>3,497,000</td>
+                        <td>10.0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LPG</strong></td>
+                        <td>2,797,600</td>
+                        <td>8.0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Petroleum Coke</strong></td>
+                        <td>699,400</td>
+                        <td>2.0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td>34,970,000</td>
+                        <td>100%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 8-2: Use of sold products emissions by product type</p>
+
+            <div class="placeholder-note">
+                ⚠️ Emissions calculated using:
+                <ul>
+                    <li><strong>Activity data:</strong> Annual sales volumes (to be sourced from commercial/logistics department)</li>
+                    <li><strong>Emission factors:</strong> Product-specific combustion EFs based on carbon content and lower heating value</li>
+                    <li><strong>References:</strong> IPCC 2006 Guidelines, EPA, or product-specific lab analysis</li>
+                </ul>
+            </div>
+
+            <h3>Scope 3 Expansion Plans</h3>
+            <p>Future inventories will consider additional Scope 3 categories:</p>
+            <ul>
+                <li>Category 1: Purchased goods and services (chemicals, catalysts)</li>
+                <li>Category 2: Capital goods (major equipment, construction)</li>
+                <li>Category 3: Fuel and energy-related activities (upstream crude extraction, transmission losses)</li>
+                <li>Category 4: Upstream transportation and distribution</li>
+                <li>Category 5: Waste generated in operations</li>
+                <li>Category 6: Business travel</li>
+            </ul>
+        </div>
+
+        <!-- ==================== SECTION 9: INTENSITIES & TRENDS ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 9: Intensities & Trends</h2>
+                <p>Performance metrics and multi-year tracking</p>
+            </div>
+
+            <h3>Carbon Intensity Metrics</h3>
+            <p>To enable year-over-year comparison and industry benchmarking, MIDOR tracks the following intensity metrics:</p>
+
+            <div class="chart-row">
+                <div id="chart-intensity-crude" class="chart-container"></div>
+                <div id="chart-intensity-fired" class="chart-container"></div>
+            </div>
+            <p class="chart-caption">Figure 9-1 & 9-2: Carbon intensity KPIs with trend sparklines</p>
+
+            <h3>Intensity Calculation Details</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Intensity 1: Emissions per Crude Input</h4>
+                    <p><strong>Formula:</strong> (Scope 1 + Scope 2) / Crude throughput</p>
+                    <p><strong>Numerator:</strong> 2,050,000 tCO₂e</p>
+                    <p><strong>Denominator:</strong> 2,920 kton crude processed (160,000 BPSD × 365 days)</p>
+                    <p><strong>Result:</strong> <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-scope1);">702.05 tCO₂e / kton crude</span></p>
+                </div>
+                <div class="card">
+                    <h4>Intensity 2: Emissions per Fired Duty</h4>
+                    <p><strong>Formula:</strong> Scope 1 / Total fired duty</p>
+                    <p><strong>Numerator:</strong> 1,800,000 tCO₂e</p>
+                    <p><strong>Denominator:</strong> 58,400,000 GJ (sum of heater and boiler fired duties)</p>
+                    <p><strong>Result:</strong> <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-teal);">0.0308 tCO₂e / GJ</span></p>
+                </div>
+            </div>
+
+            <div class="placeholder-note">
+                ⚠️ Denominators are dummy values. Actual crude throughput and fired duty figures must be obtained from:
+                <ul>
+                    <li>Crude throughput: Monthly refinery operating reports</li>
+                    <li>Fired duty: Process simulation or DCS-integrated heat duty calculations per heater/boiler</li>
+                </ul>
+            </div>
+
+            <h3>Baseline Year Establishment</h3>
+            <p><strong>2025 = Base Year</strong> for MIDOR's GHG inventory. All future inventories will compare against this baseline.</p>
+            <p>Base year intensity metrics will serve as KPIs for tracking decarbonization progress.</p>
+
+            <h3>Trend Tracking (Multi-Year)</h3>
+            <p>As MIDOR develops a time-series dataset (2025, 2026, 2027...), the following trend analyses will be included:</p>
+            <ul>
+                <li>Absolute emissions trends by scope and category</li>
+                <li>Intensity metric trends</li>
+                <li>Correlation with production changes, energy efficiency projects, and mitigation initiatives</li>
+            </ul>
+
+            <div class="callout">
+                <strong>Data Quality Improvement:</strong> Year-over-year, MIDOR will refine data collection methods, reduce uncertainties, and expand monitoring coverage (e.g., real-time flare meters, LDAR programs).
+            </div>
+        </div>
+
+        <!-- ==================== SECTION 10: BASE YEAR & RECALCULATION POLICY ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 10: Base Year & Recalculation Policy</h2>
+                <p>Ensuring consistency and comparability over time</p>
+            </div>
+
+            <h3>Base Year Selection</h3>
+            <p><strong>Base Year:</strong> 2025</p>
+            <p><strong>Rationale:</strong> 2025 is MIDOR's first comprehensive GHG inventory year. It represents a typical operational year with:</p>
+            <ul class="icon-list">
+                <li>Full refinery operations at ~160,000 BPSD</li>
+                <li>Complete data collection systems in place</li>
+                <li>No major structural changes (turnarounds, unit additions) planned during the year</li>
+                <li>Availability of activity data, emission factors, and supporting documentation</li>
+            </ul>
+
+            <h3>Recalculation Triggers</h3>
+            <p>MIDOR will recalculate the base year inventory if any of the following occur:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Trigger</th>
+                        <th>Description</th>
+                        <th>Significance Threshold</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Structural Change</strong></td>
+                        <td>Merger, acquisition, divestiture, or closure of a major unit</td>
+                        <td>>5% change in base year emissions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Boundary Change</strong></td>
+                        <td>Change in operational control, addition/removal of facilities</td>
+                        <td>>5% change in base year emissions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Calculation Method Change</strong></td>
+                        <td>Updated emission factors, improved measurement (e.g., stack tests replacing defaults)</td>
+                        <td>>5% change in category emissions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Data Error Discovery</strong></td>
+                        <td>Identification of significant error in base year data</td>
+                        <td>>5% change in base year emissions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Policy/Standard Update</strong></td>
+                        <td>Updated GWPs (new IPCC report), regulatory requirement change</td>
+                        <td>As required by standard</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 10-1: Base year recalculation triggers</p>
+
+            <h3>Recalculation Process</h3>
+            <div class="callout">
+                <strong>Process Flow:</strong>
+                <ol>
+                    <li>Identify trigger event and assess materiality (>5% test)</li>
+                    <li>Document reason for recalculation</li>
+                    <li>Recalculate base year emissions using updated data/methods</li>
+                    <li>Recalculate all subsequent years for consistency</li>
+                    <li>Disclose recalculation in inventory report with clear explanation</li>
+                    <li>Archive both original and recalculated inventories</li>
+                    <li>Obtain management approval before publication</li>
+                </ol>
+            </div>
+
+            <h3>Significance Threshold</h3>
+            <p><strong>5% Threshold:</strong> MIDOR applies a 5% materiality threshold for recalculation triggers. Changes below this threshold are generally not considered material enough to warrant base year recalculation, but are noted in annual reports.</p>
+
+            <h3>Transparency & Disclosure</h3>
+            <p>All base year recalculations will be fully disclosed in subsequent inventory reports, including:</p>
+            <ul>
+                <li>Reason for recalculation</li>
+                <li>Nature of the change (structural, methodological, data error)</li>
+                <li>Impact on base year emissions (absolute and percentage)</li>
+                <li>Impact on intensity metrics</li>
+            </ul>
+        </div>
+
+        <!-- ==================== SECTION 11: UNCERTAINTY & QUALITY ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 11: Uncertainty & Quality</h2>
+                <p>Assessing data quality and estimation confidence</p>
+            </div>
+
+            <h3>Uncertainty Assessment</h3>
+            <p>Uncertainty exists in all GHG inventories due to measurement limitations, estimation methods, and emission factor variability. MIDOR assesses uncertainty both quantitatively (where possible) and qualitatively.</p>
+
+            <h3>Quantitative Uncertainty Estimates</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Emission Category</th>
+                        <th>Emissions (tCO₂e)</th>
+                        <th>Uncertainty (±% at 95% CI)</th>
+                        <th>Lower Bound</th>
+                        <th>Upper Bound</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Stationary Combustion</strong></td>
+                        <td>1,170,000</td>
+                        <td>±8%</td>
+                        <td>1,076,400</td>
+                        <td>1,263,600</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flaring</strong></td>
+                        <td>(included in combustion)</td>
+                        <td>±15%</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Process Emissions</strong></td>
+                        <td>324,000</td>
+                        <td>±12%</td>
+                        <td>285,120</td>
+                        <td>362,880</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fugitive Emissions</strong></td>
+                        <td>216,000</td>
+                        <td>±30%</td>
+                        <td>151,200</td>
+                        <td>280,800</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mobile Combustion</strong></td>
+                        <td>90,000</td>
+                        <td>±10%</td>
+                        <td>81,000</td>
+                        <td>99,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scope 1 TOTAL</strong></td>
+                        <td>1,800,000</td>
+                        <td>±10%</td>
+                        <td>1,620,000</td>
+                        <td>1,980,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scope 2 Electricity</strong></td>
+                        <td>250,000</td>
+                        <td>±5%</td>
+                        <td>237,500</td>
+                        <td>262,500</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scope 3 Cat. 11</strong></td>
+                        <td>34,970,000</td>
+                        <td>±15%</td>
+                        <td>29,724,500</td>
+                        <td>40,215,500</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 11-1: Uncertainty estimates by category (dummy values)</p>
+
+            <div class="placeholder-note">
+                ⚠️ Uncertainty values are illustrative. Actual uncertainty should be calculated using:
+                <ul>
+                    <li>IPCC Tier 1 or Tier 2 uncertainty methods</li>
+                    <li>Monte Carlo simulations for complex sources</li>
+                    <li>Manufacturer specs for meters and instruments</li>
+                    <li>Published uncertainty ranges for emission factors</li>
+                </ul>
+            </div>
+
+            <h3>Qualitative Data Quality Ratings</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Emission Source</th>
+                        <th>Activity Data Quality</th>
+                        <th>Emission Factor Quality</th>
+                        <th>Overall Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fuel Gas Combustion</strong></td>
+                        <td>High (metered, GC analyzed)</td>
+                        <td>High (site-specific carbon balance)</td>
+                        <td>✅ High</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fuel Oil / Diesel</strong></td>
+                        <td>High (invoiced, metered)</td>
+                        <td>Medium (generic API factors)</td>
+                        <td>🟡 Medium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flaring</strong></td>
+                        <td>Medium (flow meter installed but requires calibration)</td>
+                        <td>Medium (assumed DRE 99.9%)</td>
+                        <td>🟡 Medium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H₂ Production</strong></td>
+                        <td>High (production metered, feed metered)</td>
+                        <td>High (stoichiometry + measured)</td>
+                        <td>✅ High</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Storage Tanks</strong></td>
+                        <td>Medium (throughput known, some estimation)</td>
+                        <td>Low (EPA/API models, not site-specific)</td>
+                        <td>🔴 Low-Medium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Refrigerants</strong></td>
+                        <td>Low (incomplete tracking)</td>
+                        <td>High (IPCC GWPs)</td>
+                        <td>🔴 Low</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wastewater CH₄/N₂O</strong></td>
+                        <td>Medium (flow known, COD estimated)</td>
+                        <td>Low (default IPCC factors)</td>
+                        <td>🔴 Low-Medium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Purchased Electricity</strong></td>
+                        <td>High (invoiced MWh)</td>
+                        <td>Low (grid EF placeholder)</td>
+                        <td>🟡 Medium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Use of Sold Products</strong></td>
+                        <td>High (sales invoices)</td>
+                        <td>Medium (generic combustion EFs)</td>
+                        <td>🟡 Medium</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 11-2: Qualitative data quality assessment</p>
+
+            <h3>Improvement Actions</h3>
+            <p>To reduce uncertainty and improve data quality, MIDOR plans the following actions:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Priority</th>
+                        <th>Action</th>
+                        <th>Target Source</th>
+                        <th>Expected Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>High</strong></td>
+                        <td>Increase fuel gas GC analysis frequency</td>
+                        <td>Stationary combustion</td>
+                        <td>Reduce uncertainty from ±8% to ±5%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High</strong></td>
+                        <td>Install/calibrate flare flow meters</td>
+                        <td>Flaring</td>
+                        <td>Replace estimation with continuous monitoring</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High</strong></td>
+                        <td>Implement LDAR program with OGI cameras</td>
+                        <td>Fugitive emissions</td>
+                        <td>Quantify leaks, reduce uncertainty ±30% → ±15%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium</strong></td>
+                        <td>Conduct storage tank emission modeling (TANKS)</td>
+                        <td>Tank fugitives</td>
+                        <td>Site-specific estimates vs. generic factors</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium</strong></td>
+                        <td>Implement refrigerant tracking system</td>
+                        <td>Refrigerant leaks</td>
+                        <td>Accurate mass balance, compliance with F-gas regulations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Low</strong></td>
+                        <td>Measure wastewater CH₄ emissions (chamber test)</td>
+                        <td>Wastewater treatment</td>
+                        <td>Replace default IPCC with measured values</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High</strong></td>
+                        <td>Obtain supplier-specific grid EFs</td>
+                        <td>Scope 2 electricity</td>
+                        <td>Replace placeholders with actual disclosed factors</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 11-3: Data quality improvement roadmap</p>
+        </div>
+
+        <!-- ==================== SECTION 12: MITIGATION ROADMAP ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Section 12: Mitigation Roadmap</h2>
+                <p>Pathway to reducing MIDOR's carbon footprint</p>
+            </div>
+
+            <h3>Strategic Commitment</h3>
+            <p>MIDOR is committed to managing and reducing its GHG emissions through a combination of energy efficiency, renewable energy, process optimization, and innovation.</p>
+
+            <div class="callout">
+                <strong>Decarbonization Principles:</strong>
+                <ul class="icon-list">
+                    <li>Measure and track emissions transparently</li>
+                    <li>Prioritize energy efficiency and operational excellence</li>
+                    <li>Invest in renewable energy and low-carbon alternatives</li>
+                    <li>Innovate in processes and technologies</li>
+                    <li>Engage employees and stakeholders in sustainability goals</li>
+                </ul>
+            </div>
+
+            <h3>Mitigation Initiatives Timeline</h3>
+            <div id="roadmap-container"></div>
+            <p class="chart-caption">Figure 12-1: MIDOR's mitigation roadmap (2025-2030)</p>
+
+            <h3>Initiative Details</h3>
+
+            <h4>1. Energy Management System (ISO 50001) — 2025</h4>
+            <p><strong>Description:</strong> Implement a certified energy management system to systematically monitor, analyze, and optimize energy consumption across the refinery.</p>
+            <p><strong>Expected Impact:</strong> Establish baseline and identify 5-10% energy savings opportunities over time.</p>
+
+            <h4>2. Solar PV Installation (5 MW) — 2026</h4>
+            <p><strong>Description:</strong> Install 5 MW of rooftop and ground-mounted solar photovoltaic panels on non-critical areas (warehouses, admin buildings, parking).</p>
+            <p><strong>Expected Impact:</strong> ~8,000 tCO₂e/year Scope 2 reduction (assuming ~8,000 MWh/year generation at 0.55 tCO₂e/MWh grid factor).</p>
+
+            <h4>3. Waste Heat Recovery — 2027</h4>
+            <p><strong>Description:</strong> Install heat exchangers to recover waste heat from hot flue gases and process streams for preheating or steam generation.</p>
+            <p><strong>Expected Impact:</strong> ~12,000 tCO₂e/year Scope 1 reduction (reduced fuel gas consumption in heaters/boilers).</p>
+
+            <h4>4. Fleet Electrification — 2028</h4>
+            <p><strong>Description:</strong> Replace diesel forklifts and light vehicles with electric alternatives. Install EV charging infrastructure.</p>
+            <p><strong>Expected Impact:</strong> ~3,000 tCO₂e/year Scope 1 reduction (mobile combustion), with tradeoff of increased Scope 2.</p>
+
+            <h4>5. LDAR Enhancement Program — 2029</h4>
+            <p><strong>Description:</strong> Upgrade leak detection and repair (LDAR) program with optical gas imaging (OGI) cameras, quarterly surveys, and rapid repair protocols.</p>
+            <p><strong>Expected Impact:</strong> ~5,000 tCO₂e/year Scope 1 reduction (fugitive CH₄ emissions).</p>
+
+            <h4>6. Real-time Emissions Monitoring — 2030</h4>
+            <p><strong>Description:</strong> Deploy continuous emission monitoring systems (CEMS) on major stacks and integrate with DCS for real-time GHG tracking and optimization.</p>
+            <p><strong>Expected Impact:</strong> Enable dynamic process optimization; quantification improvement rather than direct reduction, but facilitates operational decisions to minimize emissions.</p>
+
+            <h3>Cumulative Reduction Potential</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Initiative</th>
+                        <th>Reduction (tCO₂e/yr)</th>
+                        <th>% of Scope 1+2 Baseline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Solar PV (Scope 2)</td>
+                        <td>8,000</td>
+                        <td>0.4%</td>
+                    </tr>
+                    <tr>
+                        <td>Waste Heat Recovery (Scope 1)</td>
+                        <td>12,000</td>
+                        <td>0.6%</td>
+                    </tr>
+                    <tr>
+                        <td>Fleet Electrification (Scope 1)</td>
+                        <td>3,000</td>
+                        <td>0.15%</td>
+                    </tr>
+                    <tr>
+                        <td>LDAR Enhancement (Scope 1)</td>
+                        <td>5,000</td>
+                        <td>0.25%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>28,000</strong></td>
+                        <td><strong>~1.4%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table 12-1: Mitigation initiative summary</p>
+
+            <div class="placeholder-note">
+                ⚠️ Reduction estimates are preliminary. Detailed engineering studies and business case analyses will refine these projections before implementation.
+            </div>
+
+            <h3>Long-Term Ambitions</h3>
+            <p>Beyond 2030, MIDOR will explore:</p>
+            <ul>
+                <li><strong>Hydrogen as a fuel:</strong> Transitioning fired heaters from fuel gas to low-carbon or green hydrogen</li>
+                <li><strong>Carbon capture (CCUS):</strong> Evaluating CO₂ capture from SMR hydrogen plants and large heaters</li>
+                <li><strong>Renewable power purchase agreements (PPAs):</strong> Procuring renewable electricity to reduce Scope 2</li>
+                <li><strong>Circular economy:</strong> Waste-to-energy, co-processing of plastics, bio-feedstock integration</li>
+                <li><strong>Advanced process control:</strong> AI/ML-driven optimization for real-time energy and emission minimization</li>
+            </ul>
+        </div>
+
+        <!-- ==================== APPENDICES ==================== -->
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Appendix A: Glossary & Abbreviations</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Term / Abbreviation</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>API</strong></td>
+                        <td>American Petroleum Institute</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AR6</strong></td>
+                        <td>IPCC Sixth Assessment Report (2021)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BPSD</strong></td>
+                        <td>Barrels Per Stream Day (refinery throughput)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CCR</strong></td>
+                        <td>Continuous Catalyst Regeneration (platformer unit)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CEMS</strong></td>
+                        <td>Continuous Emissions Monitoring System</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CH₄</strong></td>
+                        <td>Methane</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CO₂</strong></td>
+                        <td>Carbon Dioxide</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CO₂e</strong></td>
+                        <td>Carbon Dioxide Equivalent (all GHGs expressed as CO₂)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DCS</strong></td>
+                        <td>Distributed Control System</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DEFRA</strong></td>
+                        <td>UK Department for Environment, Food & Rural Affairs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DRE</strong></td>
+                        <td>Destruction and Removal Efficiency (flares)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EF</strong></td>
+                        <td>Emission Factor</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EPA</strong></td>
+                        <td>U.S. Environmental Protection Agency</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GC</strong></td>
+                        <td>Gas Chromatography (analytical method)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GHG</strong></td>
+                        <td>Greenhouse Gas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GJ</strong></td>
+                        <td>Gigajoule (energy unit)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GWP</strong></td>
+                        <td>Global Warming Potential</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HFC</strong></td>
+                        <td>Hydrofluorocarbon (refrigerant)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IPCC</strong></td>
+                        <td>Intergovernmental Panel on Climate Change</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ISO 14064-1</strong></td>
+                        <td>International standard for organizational GHG inventories</td>
+                    </tr>
+                    <tr>
+                        <td><strong>kton</strong></td>
+                        <td>Kiloton (1,000 metric tons)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LDAR</strong></td>
+                        <td>Leak Detection and Repair</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LHV</strong></td>
+                        <td>Lower Heating Value</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LPG</strong></td>
+                        <td>Liquefied Petroleum Gas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mt</strong></td>
+                        <td>Million metric tons (Megatons)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MWh</strong></td>
+                        <td>Megawatt-hour (electricity unit)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>N₂O</strong></td>
+                        <td>Nitrous Oxide</td>
+                    </tr>
+                    <tr>
+                        <td><strong>OGI</strong></td>
+                        <td>Optical Gas Imaging (leak detection technology)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PI</strong></td>
+                        <td>OSIsoft PI System (process data historian)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PPA</strong></td>
+                        <td>Power Purchase Agreement</td>
+                    </tr>
+                    <tr>
+                        <td><strong>QA/QC</strong></td>
+                        <td>Quality Assurance / Quality Control</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scope 1</strong></td>
+                        <td>Direct GHG emissions from owned/controlled sources</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scope 2</strong></td>
+                        <td>Indirect GHG emissions from purchased energy</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scope 3</strong></td>
+                        <td>Other indirect GHG emissions in the value chain</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SMR</strong></td>
+                        <td>Steam Methane Reforming (hydrogen production)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SRU</strong></td>
+                        <td>Sulfur Recovery Unit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>tCO₂e</strong></td>
+                        <td>Metric tons of carbon dioxide equivalent</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ULSD</strong></td>
+                        <td>Ultra-Low Sulfur Diesel</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Appendix B: Equations & Emission Factors</h2>
+            </div>
+
+            <h3>Detailed Calculation Equations</h3>
+
+            <h4>Stationary Combustion (Fuel Gas)</h4>
+            <div class="equation">
+                <code>
+CO₂ = Fuel_volume (Nm³) × Carbon_content (kg C/Nm³) × (44/12) × Oxidation_factor<br><br>
+Where:<br>
+- Carbon_content from GC analysis and molecular weight calculation<br>
+- Oxidation_factor = 0.995 (default, or measured)<br>
+- 44/12 = molecular weight ratio CO₂/C<br><br>
+CH₄ = Fuel_volume × EF_CH₄ (kg CH₄/Nm³) × GWP_CH₄ (27.9)<br>
+N₂O = Fuel_volume × EF_N₂O (kg N₂O/Nm³) × GWP_N₂O (273)
+                </code>
+            </div>
+
+            <h4>Flaring</h4>
+            <div class="equation">
+                <code>
+CO₂ = Flare_gas_volume × Carbon_content × (44/12) × DRE<br>
+CH₄_slip = Flare_gas_volume × CH₄_fraction × (1 - DRE) × GWP_CH₄<br><br>
+Where:<br>
+- DRE = Destruction and Removal Efficiency = 0.999 (99.9%)<br>
+- CH₄_slip accounts for uncombusted methane
+                </code>
+            </div>
+
+            <h4>Storage Tank Losses (API Method)</h4>
+            <div class="equation">
+                <code>
+Breathing_losses = V_vapor × ρ_vapor × N_cycles<br>
+Working_losses = (Throughput / Turnover) × ρ_vapor × (1 - η_control)<br><br>
+Where:<br>
+- V_vapor = tank vapor space volume<br>
+- ρ_vapor = vapor density (function of temperature, vapor pressure)<br>
+- N_cycles = annual atmospheric pressure/temperature cycles<br>
+- η_control = vapor recovery efficiency (if VRU installed)
+                </code>
+            </div>
+
+            <h3>Emission Factor Reference Table</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>Emission Factor</th>
+                        <th>Unit</th>
+                        <th>Reference</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Refinery Fuel Gas (CO₂)</td>
+                        <td>Site-specific (from GC)</td>
+                        <td>kg CO₂/Nm³</td>
+                        <td>Lab analysis</td>
+                        <td class="placeholder-note">TO BE MEASURED</td>
+                    </tr>
+                    <tr>
+                        <td>Refinery Fuel Gas (CH₄)</td>
+                        <td>0.00001</td>
+                        <td>kg CH₄/Nm³</td>
+                        <td>API Compendium</td>
+                        <td class="placeholder-note">DEFAULT</td>
+                    </tr>
+                    <tr>
+                        <td>Refinery Fuel Gas (N₂O)</td>
+                        <td>0.0000001</td>
+                        <td>kg N₂O/Nm³</td>
+                        <td>IPCC 2006</td>
+                        <td class="placeholder-note">DEFAULT</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel Oil (CO₂)</td>
+                        <td>77.4</td>
+                        <td>kg CO₂/GJ</td>
+                        <td>IPCC 2006 Table 1.3</td>
+                        <td class="placeholder-note">DEFAULT</td>
+                    </tr>
+                    <tr>
+                        <td>Diesel (CO₂)</td>
+                        <td>74.1</td>
+                        <td>kg CO₂/GJ</td>
+                        <td>IPCC 2006 Table 1.3</td>
+                        <td>✓ IPCC</td>
+                    </tr>
+                    <tr>
+                        <td>Natural Gas (CO₂)</td>
+                        <td>56.1</td>
+                        <td>kg CO₂/GJ</td>
+                        <td>IPCC 2006 Table 1.3</td>
+                        <td>✓ IPCC</td>
+                    </tr>
+                    <tr>
+                        <td>Gasoline (use-phase)</td>
+                        <td>69.3</td>
+                        <td>kg CO₂/GJ</td>
+                        <td>IPCC 2006</td>
+                        <td>✓ IPCC</td>
+                    </tr>
+                    <tr>
+                        <td>Diesel (use-phase)</td>
+                        <td>74.1</td>
+                        <td>kg CO₂/GJ</td>
+                        <td>IPCC 2006</td>
+                        <td>✓ IPCC</td>
+                    </tr>
+                    <tr>
+                        <td>Jet Fuel (use-phase)</td>
+                        <td>71.5</td>
+                        <td>kg CO₂/GJ</td>
+                        <td>IPCC 2006</td>
+                        <td>✓ IPCC</td>
+                    </tr>
+                    <tr>
+                        <td>LPG (use-phase)</td>
+                        <td>63.1</td>
+                        <td>kg CO₂/GJ</td>
+                        <td>IPCC 2006</td>
+                        <td>✓ IPCC</td>
+                    </tr>
+                    <tr>
+                        <td>Petroleum Coke (use-phase)</td>
+                        <td>97.5</td>
+                        <td>kg CO₂/GJ</td>
+                        <td>IPCC 2006</td>
+                        <td>✓ IPCC</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table B-1: Emission factors used in this inventory</p>
+
+            <div class="placeholder-note">
+                ⚠️ All emission factors marked "TO BE MEASURED" or "DEFAULT" must be replaced with site-specific or supplier-disclosed values before final publication.
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Appendix C: Activity-to-Method Mapping</h2>
+            </div>
+
+            <p>This appendix provides a detailed cross-reference between emission activities (from MIDOR activities.xlsx) and the quantification methods applied.</p>
+
+            <h3>Scope 1 Activity Mapping</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Sub-Activity</th>
+                        <th>Method</th>
+                        <th>Data Source</th>
+                        <th>Classification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Heaters/boilers fuel gas firing</td>
+                        <td>U_01 heater fuel firing</td>
+                        <td>Carbon mass balance</td>
+                        <td>DCS flow meter + GC</td>
+                        <td>Stationary Combustion</td>
+                    </tr>
+                    <tr>
+                        <td>Heaters/boilers fuel gas firing</td>
+                        <td>U_17 heater fuel firing</td>
+                        <td>Carbon mass balance</td>
+                        <td>DCS flow meter + GC</td>
+                        <td>Stationary Combustion</td>
+                    </tr>
+                    <tr>
+                        <td>Incinerator firing</td>
+                        <td>U_13 firing</td>
+                        <td>Carbon mass balance</td>
+                        <td>DCS flow meter + GC</td>
+                        <td>Stationary Combustion</td>
+                    </tr>
+                    <tr>
+                        <td>Flare header reading</td>
+                        <td>-</td>
+                        <td>Flow meter + DRE 99.9%</td>
+                        <td>Flare flow meter + GC</td>
+                        <td>Stationary Combustion (Flaring)</td>
+                    </tr>
+                    <tr>
+                        <td>H₂ production</td>
+                        <td>U_09 production</td>
+                        <td>Process mass balance</td>
+                        <td>H₂ metering + NG feed</td>
+                        <td>Process Emission</td>
+                    </tr>
+                    <tr>
+                        <td>Catalyst regeneration</td>
+                        <td>-</td>
+                        <td>Coke burn-off calculation</td>
+                        <td>Catalyst circulation rate, coke-on-catalyst</td>
+                        <td>Process Emission</td>
+                    </tr>
+                    <tr>
+                        <td>Storage tanks breathing & working losses</td>
+                        <td>Crude Tanks</td>
+                        <td>EPA TANKS or API Ch. 7</td>
+                        <td>Tank dimensions, throughput, lab analysis</td>
+                        <td>Fugitive Emission</td>
+                    </tr>
+                    <tr>
+                        <td>Waste water unit CH₄/N₂O release</td>
+                        <td>U_54/55</td>
+                        <td>IPCC wastewater method</td>
+                        <td>Flow, COD/BOD, treatment type</td>
+                        <td>Fugitive Emission</td>
+                    </tr>
+                    <tr>
+                        <td>Refrigerant leaks</td>
+                        <td>All air conditioners</td>
+                        <td>Mass balance (purchases - disposals)</td>
+                        <td>Maintenance logs</td>
+                        <td>Fugitive Emission</td>
+                    </tr>
+                    <tr>
+                        <td>Diesel</td>
+                        <td>Forklifts</td>
+                        <td>Fuel consumption × EF</td>
+                        <td>Fuel receipts</td>
+                        <td>Mobile Combustion</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table C-1: Sample activity-to-method mapping (full mapping includes all 48 activities)</p>
+
+            <div class="placeholder-note">
+                ⚠️ Complete mapping table to be generated from "MIDOR activities.xlsx" with all 48 activities listed. Any activity classified as "pending" requires method assignment before final calculation.
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Appendix D: Data Sources & QC Checks</h2>
+            </div>
+
+            <h3>Data Source Register</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Source System / Document</th>
+                        <th>Responsible Party</th>
+                        <th>Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fuel gas flow rates</td>
+                        <td>DCS / PI Historian</td>
+                        <td>Process Engineers (per unit)</td>
+                        <td>Continuous (hourly average)</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel gas composition</td>
+                        <td>Laboratory GC analysis reports</td>
+                        <td>Laboratory</td>
+                        <td>Weekly (minimum)</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel oil / diesel consumption</td>
+                        <td>Storage tank level changes + invoices</td>
+                        <td>Procurement</td>
+                        <td>Monthly</td>
+                    </tr>
+                    <tr>
+                        <td>Electricity consumption</td>
+                        <td>Utility invoices (MIDELEC, National Grid)</td>
+                        <td>Procurement / Utilities</td>
+                        <td>Monthly</td>
+                    </tr>
+                    <tr>
+                        <td>Product sales volumes</td>
+                        <td>Commercial invoices / logistics records</td>
+                        <td>Commercial Department</td>
+                        <td>Monthly</td>
+                    </tr>
+                    <tr>
+                        <td>Flare gas flow</td>
+                        <td>Flare header flow meter</td>
+                        <td>Process Engineers</td>
+                        <td>Continuous (to be installed/calibrated)</td>
+                    </tr>
+                    <tr>
+                        <td>Refrigerant inventory</td>
+                        <td>Maintenance logs, purchase receipts</td>
+                        <td>Maintenance Department</td>
+                        <td>Quarterly</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile fuel consumption</td>
+                        <td>Vehicle fuel logs, receipts</td>
+                        <td>Fleet Manager</td>
+                        <td>Monthly</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-caption">Table D-1: Data sources and collection responsibilities</p>
+
+            <h3>QC Checks Performed</h3>
+            <ul class="icon-list">
+                <li><strong>Mass Balance Checks:</strong> Total crude input vs. product output + losses (~±2% closure expected)</li>
+                <li><strong>Energy Balance:</strong> Fuel consumed vs. heater/boiler duty (thermal efficiency check)</li>
+                <li><strong>Comparison to Prior Year:</strong> Flag any category change >20% year-over-year for investigation</li>
+                <li><strong>Peer Review:</strong> Calculations independently verified by second engineer</li>
+                <li><strong>Instrument Calibration:</strong> All critical meters calibrated annually (certificates on file)</li>
+                <li><strong>Data Completeness:</strong> Check for missing months or gaps in time-series data</li>
+            </ul>
+
+            <h3>Document Retention</h3>
+            <p>All supporting documentation for this inventory is archived for a minimum of 7 years, including:</p>
+            <ul>
+                <li>Activity data files (DCS exports, PI queries, invoices)</li>
+                <li>Emission factor references (journal articles, EPA documents, API guides)</li>
+                <li>Calculation spreadsheets with version control</li>
+                <li>QC checklists and peer review sign-offs</li>
+                <li>Meeting minutes and management approvals</li>
+            </ul>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-hero">
+                <h2 class="mt-0">Appendix E: Placeholder for Future Assurance</h2>
+            </div>
+
+            <p>This section is reserved for third-party verification or assurance statements when MIDOR pursues external audit of its GHG inventory.</p>
+
+            <h3>Assurance Levels</h3>
+            <p>ISO 14064-3 and ISO 14065 define assurance for GHG inventories:</p>
+            <ul>
+                <li><strong>Limited Assurance:</strong> Verifier confirms no material misstatements found (negative assurance)</li>
+                <li><strong>Reasonable Assurance:</strong> Verifier provides positive confirmation that inventory is free of material misstatement (higher rigor)</li>
+            </ul>
+
+            <h3>Future Assurance Plan</h3>
+            <p>MIDOR plans to seek third-party verification for the 2026 inventory (covering base year 2025 data), with the following scope:</p>
+            <ul class="icon-list">
+                <li>Scope 1 and Scope 2 emissions (Scope 3 Cat. 11 optional depending on stakeholder interest)</li>
+                <li>Limited assurance level initially; reasonable assurance in future years</li>
+                <li>Accredited verifier (ISO 14065 or equivalent)</li>
+                <li>Site visit including data room review, interviews, and spot-checks of meters/instruments</li>
+            </ul>
+
+            <div class="callout">
+                <strong>Benefits of Assurance:</strong>
+                <ul>
+                    <li>Enhanced credibility for stakeholders (investors, customers, regulators)</li>
+                    <li>Identification of data quality improvements</li>
+                    <li>Compliance with voluntary or mandatory reporting schemes (e.g., CDP, EU ETS if applicable)</li>
+                    <li>Preparation for future carbon markets or border adjustment mechanisms</li>
+                </ul>
+            </div>
+
+            <h3>Sample Assurance Statement Format</h3>
+            <div style="border: 1px solid var(--color-gray-light); padding: var(--spacing-md); margin: var(--spacing-md) 0; background-color: rgba(0,0,0,0.02);">
+                <p style="text-align: center; font-style: italic; color: var(--color-gray);">
+                    [PLACEHOLDER FOR THIRD-PARTY VERIFICATION STATEMENT]
+                </p>
+                <p style="font-size: 0.9rem; color: var(--color-gray); margin-top: var(--spacing-sm);">
+                    <strong>Example Content:</strong><br>
+                    "[Verifier Name], an independent verification body accredited to ISO 14065, was engaged by MIDOR Refinery to provide limited assurance over its GHG inventory for the year 2025. Our verification was conducted in accordance with ISO 14064-3:2019. Based on our procedures, nothing has come to our attention that causes us to believe that the GHG statement is not prepared, in all material respects, in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Standard."
+                </p>
+            </div>
+        </div>
+
+        <!-- ==================== END OF REPORT ==================== -->
+        <div class="section page-break text-center" style="padding-top: 5rem;">
+            <h2>End of Report</h2>
+            <p>MIDOR Refinery — Organizational GHG Inventory (Base Year 2025)</p>
+            <p class="text-gray">Operational Control Approach</p>
+            <p class="text-gray mt-3">Conformant with ISO 14064-1:2018 and GHG Protocol Corporate Standard</p>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%); border-radius: 8px;">
+                <p style="font-size: 0.875rem; color: var(--color-gray);">
+                    <strong>How to Update This Report Next Year:</strong><br>
+                    1. Update "MIDOR activities.xlsx" with new activity data<br>
+                    2. Update emission factors in assets/js/data.js<br>
+                    3. Regenerate data allocation using Python script<br>
+                    4. Refresh year references (2025 → 2026) throughout HTML<br>
+                    5. Print to PDF and distribute
+                </p>
+            </div>
+
+            <p class="mt-5 text-gray" style="font-size: 0.75rem;">
+                Report generated: 2025 | Document version: 1.0 | All data placeholder pending actual 2025 data collection
+            </p>
+        </div>
+
+        <script src="assets/js/data.js"></script>
+        <script src="assets/js/charts.js"></script>
+    </div>
+</body>
+</html>
