@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIDOR Refinery — GHG Inventory 2024</title>
+    <link rel="stylesheet" href="assets/css/styles-magazine.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        /* Prevent empty pages when printing to PDF */
+        @media print {
+            .page:empty,
+            .page:blank {
+                display: none;
+            }
+            .page {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            .page + .page {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== COVER PAGE ==================== -->
+    <div class="page cover-page">
+        <img src="assets/img/MIDPR_map.PNG" class="full-bleed-bg" alt="MIDOR Refinery">
+        <div class="overlay overlay-dark"></div>
+        <div class="content text-center text-white">
+            <h1 class="cover-title">MIDOR REFINERY</h1>
+            <p class="cover-subtitle">Organizational GHG Inventory</p>
+            <p class="cover-subtitle">Operational Control Approach</p>
+            <div class="cover-year">REPORTING YEAR 2024</div>
+            <p style="margin-top: 2rem; font-size: 10pt; opacity: 0.9;">
+                ISO 14064-1:2018 | GHG Protocol Corporate Standard
+            </p>
+        </div>
+    </div>
+
+    <!-- ==================== EXECUTIVE SUMMARY ==================== -->
+    <div class="page">
+        <div class="grid-sidebar-right content-dense">
+            <!-- Main Content Area (Left) -->
+            <div>
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="handwritten mt-3">Executive Summary</h2>
+                </div>
+
+                <p class="intro-text">
+                    As one of Egypt's leading petroleum refineries, MIDOR Refinery recognizes the critical importance of measuring and managing our greenhouse gas emissions. This Carbon Footprint Report establishes our baseline for effective climate action, documenting our 2024 emissions across all three scopes.
+                </p>
+
+                <div class="text-2col mt-3">
+                    <p>
+                        The report provides a comprehensive account of MIDOR's GHG emissions, encompassing our direct emissions from refinery operations, indirect emissions from purchased electricity, and selected value chain emissions from employee commuting and the use of our sold petroleum products.
+                    </p>
+
+                    <p>
+                        <strong>Reporting Period:</strong> January 1, 2024 - December 31, 2024, covering GHG emissions from our main refinery operations. The analysis and calculations are based on the GHG Protocol, the Intergovernmental Panel on Climate Change (IPCC) Guidelines, and ISO 14064-1:2018 standards.
+                    </p>
+
+                    <p>
+                        Our inventory follows the <strong>operational control</strong> consolidation approach, accounting for 100% of emissions from facilities under MIDOR's operational control. This includes all process units, utilities, storage facilities, flare systems, and on-site mobile equipment within the refinery boundary.
+                    </p>
+
+                    <p>
+                        <strong>Total GHG emissions for 2024: 19.94 million tCO₂e</strong>, distributed across our three reporting scopes. The inventory demonstrates the typical emission profile for petroleum refineries, where downstream product combustion (Scope 3 Category 11) represents the largest share, while operational emissions (Scopes 1 and 2) remain material for our direct climate impact management.
+                    </p>
+                </div>
+
+                <!-- Scope Diagram -->
+                <div class="scope-diagram mt-3">
+                    <div class="scope-circle scope-1">
+                        <div style="font-size: 10pt;">Scope 1</div>
+                        <div style="font-size: 14pt;">2.81 Mt</div>
+                    </div>
+                    <div class="scope-connector"></div>
+                    <div class="scope-circle scope-2">
+                        <div style="font-size: 10pt;">Scope 2</div>
+                        <div style="font-size: 14pt;">0.20 Mt</div>
+                    </div>
+                    <div class="scope-connector"></div>
+                    <div class="scope-circle scope-3">
+                        <div style="font-size: 10pt;">Scope 3</div>
+                        <div style="font-size: 14pt;">16.93 Mt</div>
+                    </div>
+                </div>
+
+                <div class="text-2col mt-2">
+                    <p>
+                        Our operational carbon footprint (Scopes 1+2 combined) totals 3.01 million tCO₂e, representing approximately 5.5% of our total inventory. This includes emissions from stationary combustion in fired heaters and boilers, process emissions from hydrogen production and catalyst regeneration, fugitive emissions from storage tanks and equipment leaks, mobile combustion from on-site vehicles, and purchased electricity from MIDELEC and the National Grid.
+                    </p>
+
+                    <p>
+                        We have established two key intensity metrics: <strong>482 tCO₂e per kiloton of crude processed</strong> and <strong>0.047 tCO₂e per GJ of fired duty</strong>. These benchmarks will enable year-over-year performance tracking and industry comparison as we implement our decarbonization roadmap.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sidebar (Right) -->
+            <div class="sidebar">
+                <div>
+                    <h3>REPORTING PERIOD</h3>
+                    <div class="callout-rect text-center" style="padding: 0.8rem; min-width: 130px;">
+                        <div style="font-size: 12pt; font-weight: 700; white-space: nowrap;">01/01/2024</div>
+                        <div class="flow-arrow">↓</div>
+                        <div style="font-size: 12pt; font-weight: 700; white-space: nowrap;">31/12/2024</div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <div class="callout" style="width: 120px; height: 120px; margin: 0 auto;">
+                        <div class="callout-value">19.94</div>
+                        <div class="callout-label">Million tCO₂e<br>Total Footprint</div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <div class="callout bg-yellow" style="width: 120px; height: 120px; margin: 0 auto; background: var(--color-accent-yellow); color: var(--color-navy);">
+                        <div class="callout-value">3.01</div>
+                        <div class="callout-label">Million tCO₂e<br>Operational<br>(Scope 1+2)</div>
+                    </div>
+                </div>
+
+                <div class="mt-3" style="font-size: 8pt; line-height: 1.3;">
+                    <h4 style="color: white; font-size: 10pt;">Our Commitment</h4>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        MIDOR is committed to transparently measuring, reporting, and reducing our carbon footprint through energy efficiency, renewable energy, and process innovation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TABLE OF CONTENTS ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">📑</span>
+                <h2 class="mt-3">TABLE OF CONTENTS</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px); gap: 2rem;">
+                <!-- Left Column -->
+                <div>
+                    <div style="border-left: 3px solid var(--color-primary); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">01 • EXECUTIVE SUMMARY</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            Overview of MIDOR's 2024 GHG inventory, total emissions, and key findings
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-secondary); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-secondary); margin-bottom: 0.5rem;">02 • INTRODUCTION</h3>
+                        <ul style="font-size: 7.5pt; line-height: 1.5; margin: 0; list-style: none; padding: 0;">
+                            <li>02.01 Background</li>
+                            <li>02.02 Boundaries</li>
+                            <li>02.03 Methodology</li>
+                            <li>02.04 Base Year</li>
+                        </ul>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-teal-dark); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-teal-dark); margin-bottom: 0.5rem;">03 • MIDOR AT A GLANCE</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            Site overview, process units, and refinery complexes
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-navy); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-navy); margin-bottom: 0.5rem;">04 • PRINCIPLES & GOVERNANCE</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            GHG accounting principles, responsible party statement, governance structure
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-accent-orange); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-accent-orange); margin-bottom: 0.5rem;">05 • SCOPE 1: DIRECT EMISSIONS</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            Stationary combustion, process emissions, fugitives, mobile sources
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-primary); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">06 • SCOPE 2 & 3 OVERVIEW</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            Purchased electricity, employee commuting, use of sold products
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-secondary); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-secondary); margin-bottom: 0.5rem;">06 • MITIGATION ROADMAP</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            Pathway to 2030: Strategic initiatives and reduction targets
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-teal-dark); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-teal-dark); margin-bottom: 0.5rem;">07 • BOUNDARIES</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            Organizational and operational boundaries, scope inclusion
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-navy); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-navy); margin-bottom: 0.5rem;">08 • METHODS & FACTORS</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            GHG gases, global warming potentials, emission factors
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <div style="border-left: 3px solid var(--color-accent-orange); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-accent-orange); margin-bottom: 0.5rem;">09 • INTENSITIES & TRENDS</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            Carbon intensity metrics, future trend analysis framework
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-primary); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">10 • BASE YEAR & RECALCULATION POLICY</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            Base year selection rationale, recalculation triggers and process
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-secondary); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-secondary); margin-bottom: 0.5rem;">11 • UNCERTAINTY & QUALITY</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            Quantitative uncertainty estimates, data quality improvement roadmap
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid var(--color-teal-dark); padding-left: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-teal-dark); margin-bottom: 0.5rem;">12 • ACKNOWLEDGEMENTS</h3>
+                        <p style="font-size: 7.5pt; line-height: 1.4; margin: 0; color: var(--color-gray-mid);">
+                            Report prepared by, special thanks to instructors and organizing team
+                        </p>
+                    </div>
+
+                    <div style="background: var(--color-off-white); padding: 1rem; border-radius: 8px; margin-top: 2rem;">
+                        <h3 style="color: var(--color-navy); margin-bottom: 0.5rem; font-size: 10pt;">APPENDICES</h3>
+                        <ul style="font-size: 7.5pt; line-height: 1.6; margin: 0; list-style: none; padding: 0;">
+                            <li><strong>Appendix A:</strong> Glossary & Abbreviations</li>
+                            <li><strong>Appendix B:</strong> Equations & Emission Factors</li>
+                            <li><strong>Appendix C:</strong> Activity-to-Method Mapping</li>
+                            <li><strong>Appendix D:</strong> Data Sources & QC Checks</li>
+                            <li><strong>Appendix E:</strong> Verification & Assurance</li>
+                            <li><strong>Appendix F:</strong> ISO 14064-1 Compliance Cross-Reference</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== INTRODUCTION SPREAD (2-PAGE) ==================== -->
+    <!-- Left Page -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="mt-3">INTRODUCTION</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <!-- Column 1 -->
+                <div>
+                    <h3>02.01 BACKGROUND</h3>
+                    <p style="font-size: 8.5pt; line-height: 1.35;">
+                        MIDOR Refinery is one of Egypt's major petroleum refining facilities, refining more than 46 million barrels of crude oil in 2024 (average ~126,000 BPSD) of crude oil. Located on the Mediterranean coast, the refinery produces a diverse slate of petroleum products including LPG, gasoline, jet fuel, diesel, fuel oil, petroleum coke, and sulfur.
+                    </p>
+                    <p style="font-size: 8.5pt; line-height: 1.35;">
+                        This report represents MIDOR's inaugural comprehensive greenhouse gas inventory for the 2024 reporting period. It was prepared as a post-training course assignment following specialized training on GHG management for climate action. As a responsible corporate citizen and key player in Egypt's energy sector, we recognize our obligation to measure, disclose, and manage our environmental impact.
+                    </p>
+                    <p style="font-size: 8.5pt; line-height: 1.35;">
+                        The refinery complex comprises multiple processing units including crude/vacuum distillation (U_01, U_17), catalytic reforming (U_04 CCR/Platformer), hydrotreating units (U_02/03, U_08, U_18-21), hydrogen production via steam methane reforming (U_09, U_21), delayed coking (U_11), sulfur recovery (U_13, U_22), and comprehensive utilities and storage infrastructure.
+                    </p>
+
+                    <h3 class="mt-2">02.02 BOUNDARIES</h3>
+                    <p style="font-size: 8.5pt; line-height: 1.35;">
+                        This report covers MIDOR's operations under the <strong>operational control</strong> consolidation approach, including all facilities within the refinery fence line. Our first year inventory quantifies emissions across:
+                    </p>
+                    <ul style="font-size: 8.5pt; line-height: 1.35; margin-left: 1.5rem;">
+                        <li><strong>Scope 1:</strong> Direct emissions from combustion, processes, fugitives, and mobile sources</li>
+                        <li><strong>Scope 2:</strong> Indirect emissions from purchased electricity (MIDELEC and National Grid)</li>
+                        <li><strong>Scope 3:</strong> Selected categories - Employee commuting (Cat. 7) and Use of sold products (Cat. 11)</li>
+                    </ul>
+
+                    <div style="background: rgba(0,163,163,0.08); padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0; border-left: 3px solid var(--color-teal-dark);">
+                        <p style="font-size: 8pt; line-height: 1.3; margin: 0;"><strong>Significance Criteria for Indirect Emissions (ISO 14064-1 §9.3e):</strong></p>
+                        <ul style="font-size: 8pt; line-height: 1.3; margin: 0.2rem 0 0 1.2rem;">
+                            <li>Scope 3 categories expected to contribute ≥1% of total GHG emissions are included</li>
+                            <li>Inventory aims to cover ≥95% of total estimated emissions across all scopes</li>
+                            <li>Any excluded category above these thresholds is explicitly justified</li>
+                            <li>Categories considered strategically relevant for climate action are prioritized</li>
+                        </ul>
+                    </div>
+
+                    <p style="font-size: 8.5pt; line-height: 1.35;">
+                        Following GHG Protocol guidelines, we calculated emissions for Scopes 1, 2, and selected Scope 3 categories using a significance analysis. Future inventories may expand Scope 3 coverage based on materiality assessments and data availability improvements.
+                    </p>
+
+                    <div style="background: rgba(0,78,137,0.08); padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0; border-left: 3px solid var(--color-navy);">
+                        <p style="font-size: 8pt; line-height: 1.3; margin: 0 0 0.2rem 0;"><strong>Biogenic CO₂ & GHG Removals (ISO 14064-1 §9.3g-i):</strong></p>
+                        <p style="font-size: 8pt; line-height: 1.3; margin: 0;">
+                            <strong>Biogenic CO₂:</strong> No biomass fuels are combusted within the organizational boundary. Biogenic CO₂ emissions and removals are therefore <strong>zero</strong> for the 2024 reporting period.
+                        </p>
+                        <p style="font-size: 8pt; line-height: 1.3; margin: 0.2rem 0 0 0;">
+                            <strong>Direct GHG Removals:</strong> MIDOR owns and operates no GHG removal projects or sinks (e.g., CCUS, forests, soil carbon). No direct GHG removals are included in this inventory.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h3>02.03 METHODOLOGY</h3>
+                    <p style="font-size: 8.5pt; line-height: 1.35;">
+                        All collected and analyzed data follows the GHG Protocol Corporate Standard and ISO 14064-1:2018 guidelines. Emission factors are sourced from IPCC AR6 (2021), DEFRA 2024, API Compendium, US EPA, and site-specific measurements where available. Some emission factors are calculated using site-specific data (Tier 3 methodology).
+                    </p>
+
+                    <div style="background: rgba(255,153,51,0.08); padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0; border-left: 3px solid var(--color-accent-orange);">
+                        <p style="font-size: 8pt; line-height: 1.3; margin: 0 0 0.2rem 0;"><strong>Methodology Changes (ISO 14064-1 §9.3n):</strong></p>
+                        <p style="font-size: 8pt; line-height: 1.3; margin: 0;">
+                            This is the first GHG inventory year for MIDOR Refinery. Therefore, no changes in quantification approaches relative to previous reports are applicable. Future inventories will document any methodology changes following the established recalculation policy.
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(0,163,163,0.08); padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0; border-left: 3px solid var(--color-secondary);">
+                        <p style="font-size: 8pt; line-height: 1.3; margin: 0 0 0.2rem 0;"><strong>Scope 2 Reporting Method:</strong></p>
+                        <p style="font-size: 8pt; line-height: 1.3; margin: 0;">
+                            Scope 2 emissions are reported using the <strong>location-based method</strong>, applying the Egyptian national grid emission factor (0.559 kg CO₂e/kWh for 2024) to all purchased electricity from MIDELEC and the National Grid.
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255,204,0,0.08); padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0; border-left: 3px solid var(--color-accent-yellow);">
+                        <p style="font-size: 8pt; line-height: 1.3; margin: 0 0 0.2rem 0;"><strong>GHG Offsets & Renewable Energy Claims:</strong></p>
+                        <p style="font-size: 8pt; line-height: 1.3; margin: 0;">
+                            No GHG offsets, carbon credits, renewable energy certificates (RECs), or similar instruments are claimed in this inventory. All emissions reported are <strong>gross values</strong> without any offset deductions. Any future offset purchases will be reported separately and not netted out of Scope 1/2 totals, in accordance with GHG Protocol guidance.
+                        </p>
+                    </div>
+
+                    <!-- Scope 3 Categories Diagram -->
+                    <div style="background: var(--color-off-white); padding: var(--gap-md); border-radius: 8px; margin: var(--gap-md) 0;">
+                        <h4 class="text-center">SCOPE 3 CATEGORIES IN THIS INVENTORY</h4>
+                        <div style="display: flex; justify-content: space-around; align-items: center; margin-top: var(--gap-md);">
+                            <div style="text-align: center;">
+                                <div class="icon-badge" style="margin: 0 auto;">🚗</div>
+                                <div style="font-size: 8pt; font-weight: 600;">Cat. 7<br>Employee<br>Commute</div>
+                                <div style="font-size: 10pt; font-weight: 700; color: var(--color-primary);">48,000<br>tCO₂e</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div class="icon-badge" style="margin: 0 auto; background: var(--color-accent-orange);">⛽</div>
+                                <div style="font-size: 8pt; font-weight: 600;">Cat. 11<br>Use of Sold<br>Products</div>
+                                <div style="font-size: 10pt; font-weight: 700; color: var(--color-accent-orange);">16,878,521<br>tCO₂e</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 8.5pt; line-height: 1.35; margin-top: var(--gap-md);">
+                        <strong>Gases Quantified:</strong> Our inventory covers carbon dioxide (CO₂), methane (CH₄), and nitrous oxide (N₂O), with all emissions expressed as CO₂ equivalent using global warming potentials from IPCC's Sixth Assessment Report (AR6, 100-year horizon).
+                    </p>
+
+                    <table style="margin-top: var(--gap-md); font-size: 7.5pt;">
+                        <thead>
+                            <tr>
+                                <th>Gas</th>
+                                <th>GWP (AR6)</th>
+                                <th>Primary Sources</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>CO₂</strong></td>
+                                <td>1</td>
+                                <td>Combustion, processes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CH₄</strong></td>
+                                <td>27.9</td>
+                                <td>Fugitives, wastewater</td>
+                            </tr>
+                            <tr>
+                                <td><strong>N₂O</strong></td>
+                                <td>273</td>
+                                <td>Combustion, wastewater</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="mt-2">02.04 BASE YEAR</h3>
+                    <p style="font-size: 8.5pt; line-height: 1.35;">
+                        <strong>A base year has not been selected yet</strong> for our GHG emissions because the refinery is currently in a state of significant change. Major revamp projects and unstable operations mean our current energy use and emissions data are unusually high and unpredictable. Using this abnormal period as a baseline would give an inaccurate picture of our performance. Therefore, we will select a base year only after the revamps are complete and the refinery has returned to stable, normal operations.
+
+                    <div class="callout-rect mt-2" style="background: var(--color-accent-orange); color: white;">
+                        <strong>No Base Year Selected Yet</strong><br></strong><br>
+                        <span style="font-size: 8pt;">All future inventories will compare against this baseline to track performance trends and reduction initiatives.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    \n    <!-- ==================== SECTION 1: MIDOR AT A GLANCE ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="mt-3">MIDOR AT A GLANCE</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <!-- Left: Site Overview -->
+                <div>
+                    <h3>Site Overview</h3>
+                    <div class="photo-box" style="height: 150px; margin-bottom: var(--gap-md);">
+                        <img src="assets/img/MIDPR_map.PNG" alt="MIDOR Site" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <p class="caption">MIDOR Refinery geographical footprint and site layout</p>
+
+                    <div class="grid-3col mt-2" style="gap: 0.5rem;">
+                        <div class="data-card" style="padding: var(--gap-sm);">
+                            <div class="data-card-value" style="font-size: 20pt;">160,000</div>
+                            <div class="data-card-label" style="font-size: 7.5pt;">BPSD<br>Crude Throughput</div>
+                        </div>
+                        <div class="data-card" style="padding: var(--gap-sm);">
+                            <div class="data-card-value" style="font-size: 20pt;">8+</div>
+                            <div class="data-card-label" style="font-size: 7.5pt;">Main Products<br>LPG to Coke</div>
+                        </div>
+                        <div class="data-card" style="padding: var(--gap-sm);">
+                            <div class="data-card-value" style="font-size: 20pt;">2</div>
+                            <div class="data-card-label" style="font-size: 7.5pt;">Electricity<br>Suppliers</div>
+                        </div>
+                    </div>
+
+                    <h4 class="mt-2">Main Product Slate</h4>
+                    <table style="font-size: 7pt; margin-top: 0.5rem;">
+                        <thead>
+                            <tr><th>Product</th><th>Markets</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>LPG</strong></td><td>Domestic & Regional</td></tr>
+                            <tr><td><strong>Gasoline</strong></td><td>Domestic</td></tr>
+                            <tr><td><strong>Jet Fuel/Kerosene</strong></td><td>Exported</td></tr>
+                            <tr><td><strong>Diesel (ULSD)</strong></td><td>Domestic (portion exported)</td></tr>
+                            <tr><td><strong>Fuel Oil</strong></td><td>Industrial/Marine</td></tr>
+                            <tr><td><strong>Petroleum Coke</strong></td><td>Industrial</td></tr>
+                            <tr><td><strong>Sulfur</strong></td><td>Industrial/Fertilizer</td></tr>
+                            <tr><td><strong>Asphalt</strong></td><td>Domestic</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Right: Process Units -->
+                <div>
+                    <h3>Refinery Complexes & Process Units</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: var(--gap-md);">
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-primary);">
+                            <div style="font-size: 8pt; font-weight: 700; color: var(--color-navy);">🔧 Crude/Vacuum</div>
+                            <div style="font-size: 7pt; line-height: 1.2; margin-top: 0.2rem;">U_01, U_17<br>Primary fractionation</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-secondary);">
+                            <div style="font-size: 8pt; font-weight: 700; color: var(--color-navy);">⚗️ Catalytic Reforming</div>
+                            <div style="font-size: 7pt; line-height: 1.2; margin-top: 0.2rem;">U_04 CCR Platformer<br>Octane enhancement</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-teal-dark);">
+                            <div style="font-size: 8pt; font-weight: 700; color: var(--color-navy);">🧪 Hydrotreating</div>
+                            <div style="font-size: 7pt; line-height: 1.2; margin-top: 0.2rem;">U_02/03, U_08, U_18-20<br>Sulfur removal</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-accent-orange);">
+                            <div style="font-size: 8pt; font-weight: 700; color: var(--color-navy);">💨 H₂ Production</div>
+                            <div style="font-size: 7pt; line-height: 1.2; margin-top: 0.2rem;">U_09, U_21 SMR<br>Steam methane reforming</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-navy);">
+                            <div style="font-size: 8pt; font-weight: 700; color: var(--color-navy);">♨️ Delayed Coking</div>
+                            <div style="font-size: 7pt; line-height: 1.2; margin-top: 0.2rem;">U_11 (incl. Cell 3)<br>Bottom upgrading</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-accent-yellow);">
+                            <div style="font-size: 8pt; font-weight: 700; color: var(--color-navy);">🔥 Sulfur Recovery</div>
+                            <div style="font-size: 7pt; line-height: 1.2; margin-top: 0.2rem;">U_13, U_22 SRU<br>Claus + tail gas</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-gray-mid);">
+                            <div style="font-size: 8pt; font-weight: 700; color: var(--color-navy);">⚙️ Utilities</div>
+                            <div style="font-size: 7pt; line-height: 1.2; margin-top: 0.2rem;">U_37 Boilers<br>Steam, power, cooling</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-primary);">
+                            <div style="font-size: 8pt; font-weight: 700; color: var(--color-navy);">🔥 Flare & Offsites</div>
+                            <div style="font-size: 7pt; line-height: 1.2; margin-top: 0.2rem;">Flare system, tanks<br>Safety relief, storage</div>
+                        </div>
+                    </div>
+
+                    <h4 class="mt-2">Operational Characteristics</h4>
+                    <div class="text-2col" style="font-size: 7.5pt; line-height: 1.3; margin-top: 0.5rem;">
+                        <p>MIDOR processes approximately <strong>160,000 BPSD of crude oil</strong>, equivalent to ~2.92 million tons annually. The refinery configuration includes deep conversion units (delayed coker) enabling high-value product yields.</p>
+                        <p>Energy requirements are met through refinery fuel gas (RFG) produced internally, supplemented by fuel oil and diesel where needed. Electricity is sourced primarily from MIDELEC with National Grid backup.</p>
+                        <p>The site operates <strong>365 days per year</strong> with planned maintenance turnarounds typically every 4-5 years. Process control is managed via distributed control system (DCS) with PI data historian for continuous monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 2: PRINCIPLES & GOVERNANCE ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="mt-3">PRINCIPLES & GOVERNANCE</h2>
+            </div>
+
+            <h3>Inventory Principles (ISO 14064-1 & GHG Protocol)</h3>
+            <div class="grid-3col" style="gap: 0.7rem; margin-top: var(--gap-md); margin-bottom: var(--gap-md);">
+                <div class="data-card" style="background: var(--color-primary); color: white; padding: var(--gap-sm);">
+                    <div style="font-size: 10pt; font-weight: 700; margin-bottom: 0.3rem;">1. RELEVANCE</div>
+                    <div style="font-size: 7.5pt; line-height: 1.3;">All significant emission sources identified and included. Boundary reflects operational control and material activities.</div>
+                </div>
+                <div class="data-card" style="background: var(--color-secondary); color: white; padding: var(--gap-sm);">
+                    <div style="font-size: 10pt; font-weight: 700; margin-bottom: 0.3rem;">2. COMPLETENESS</div>
+                    <div style="font-size: 7.5pt; line-height: 1.3;">All Scope 1 sources included. Scope 2 covers all electricity. Scope 3 includes Cat. 7 & 11.</div>
+                </div>
+                <div class="data-card" style="background: var(--color-teal-dark); color: white; padding: var(--gap-sm);">
+                    <div style="font-size: 10pt; font-weight: 700; margin-bottom: 0.3rem;">3. CONSISTENCY</div>
+                    <div style="font-size: 7.5pt; line-height: 1.3;">Methods and boundaries defined for multi-year tracking. Recalculation policy established.</div>
+                </div>
+                <div class="data-card" style="background: var(--color-accent-orange); color: white; padding: var(--gap-sm);">
+                    <div style="font-size: 10pt; font-weight: 700; margin-bottom: 0.3rem;">4. ACCURACY</div>
+                    <div style="font-size: 7.5pt; line-height: 1.3;">Data from calibrated meters, DCS/PI, lab analysis, invoices. Uncertainty assessed per category.</div>
+                </div>
+                <div class="data-card" style="background: var(--color-navy); color: white; padding: var(--gap-sm);">
+                    <div style="font-size: 10pt; font-weight: 700; margin-bottom: 0.3rem;">5. TRANSPARENCY</div>
+                    <div style="font-size: 7.5pt; line-height: 1.3;">All methods, data sources, EFs, assumptions, and exclusions documented and disclosed.</div>
+                </div>
+            </div>
+
+            <!-- ISO 14064-1 REQUIRED: Responsible Party Statement -->
+            <div style="background: linear-gradient(135deg, rgba(0,78,137,0.15), rgba(0,163,163,0.15)); padding: var(--gap-md); border-radius: 8px; margin: var(--gap-md) 0; border: 2px solid var(--color-primary);">
+                <h4 style="font-size: 10pt; margin: 0 0 0.3rem 0; color: var(--color-navy);">📋 Responsible Party & GHG Statement (ISO 14064-1 §5.1)</h4>
+                <p style="font-size: 8.5pt; line-height: 1.4; margin: 0;">
+                    <strong>MIDOR Refinery management is the responsible party for this GHG inventory and its underlying emissions statement.</strong> This responsibility includes ensuring the accuracy, completeness, and transparency of reported emissions data; implementing and maintaining appropriate quantification methodologies; and approving the final inventory report for disclosure. The inventory has been prepared under the authority of MIDOR's executive leadership and HSE Department.
+                </p>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 320px);">
+                <!-- Roles -->
+                <div>
+                    <h3>Roles & Responsibilities</h3>
+                    <table style="font-size: 7pt; margin-top: 0.5rem;">
+                        <thead>
+                            <tr><th>Role</th><th>Responsibility</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Inventory Manager</strong></td><td>Overall coordination, compilation, reporting</td></tr>
+                            <tr><td><strong>Process Engineers</strong></td><td>Activity data collection from units</td></tr>
+                            <tr><td><strong>Laboratory</strong></td><td>Fuel composition analysis (GC, calorific)</td></tr>
+                            <tr><td><strong>Maintenance</strong></td><td>Refrigerant tracking, LDAR program</td></tr>
+                            <tr><td><strong>Procurement</strong></td><td>Electricity invoices, fuel purchases</td></tr>
+                            <tr><td><strong>HSE Department</strong></td><td>QA/QC, regulatory compliance</td></tr>
+                            <tr><td><strong>Management</strong></td><td>Review, targets, approval, disclosure</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="callout-rect mt-2" style="font-size: 7.5pt; line-height: 1.3;">
+                        <strong>Data Flow:</strong> Activity data → Unit engineers → Centralized database → Emission calculations → QC review → Management approval → External reporting
+                    </div>
+                </div>
+
+                <!-- QA/QC -->
+                <div>
+                    <h3>Quality Assurance / Quality Control</h3>
+                    <div style="font-size: 7.5pt; line-height: 1.35; margin-top: 0.5rem;">
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-primary);">
+                            <strong>✓ Meter Calibration:</strong> All flow meters and analytical instruments on annual calibration schedule with certificates retained
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-secondary);">
+                            <strong>✓ Data Validation:</strong> Cross-checks between DCS, PI historian, and manual logs for consistency
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-teal-dark);">
+                            <strong>✓ Calculation Review:</strong> Independent verification of emission factors and formulas by second engineer
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-accent-orange);">
+                            <strong>✓ Peer Review:</strong> Internal technical review before finalization, documented sign-offs
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-navy);">
+                            <strong>✓ Change Control:</strong> Documented process for methodology or boundary changes with justification
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-gray-mid);">
+                            <strong>✓ Archiving:</strong> All source data, calculations, and supporting documents retained for 7 years
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SCOPE 1 DETAILED ANALYSIS ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="mt-3">SCOPE 1: DIRECT EMISSIONS</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <!-- Left Column -->
+                <div>
+                    <h3>Emissions by Category</h3>
+                    <div id="chart_scope1_donut" style="width: 100%; height: 280px;"></div>
+
+                    <h3 class="mt-2">Category Breakdown</h3>
+                    <table style="font-size: 8pt; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Emissions (tCO₂e)</th>
+                                <th>% of Scope 1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Stationary Combustion</strong></td>
+                                <td>2,608,831</td>
+                                <td>92.7%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Process Emissions</strong></td>
+                                <td>200,520</td>
+                                <td>7.1%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fugitive Emissions</strong></td>
+                                <td>3,277</td>
+                                <td>0.1%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mobile Combustion</strong></td>
+                                <td>690</td>
+                                <td>0.02%</td>
+                            </tr>
+                            <tr style="font-weight: bold; background: var(--color-off-white);">
+                                <td>TOTAL SCOPE 1</td>
+                                <td>2,813,318</td>
+                                <td>100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <h3>Top Refinery Units - Stationary Combustion</h3>
+                    <div id="chart_stationary_units" style="width: 100%; height: 350px;"></div>
+
+                    <div class="callout mt-2" style="background: var(--color-primary); color: white; padding: 0.8rem;">
+                        <h4 style="margin-top: 0; font-size: 11pt; font-weight: bold;">Key Insights</h4>
+                        <ul style="font-size: 9.5pt; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
+                            <li style="margin-bottom: 0.3rem;">Stationary combustion dominates Scope 1 (92.7%), primarily from heaters and boilers firing fuel gas</li>
+                            <li style="margin-bottom: 0.3rem;">Process emissions (7.1%) mainly from hydrogen production units (U_09, U_21) and catalyst regeneration</li>
+                            <li style="margin-bottom: 0.3rem;">Fugitive emissions minimal due to effective leak detection and repair program</li>
+                            <li>Top 3 units: U_37 boilers, U_21 heater, U_20 heater</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== SCOPE 2 & 3 OVERVIEW ==================== -->
+    <div class="page">
+        <div class="grid-2col content-dense">
+            <!-- SCOPE 2 -->
+            <div>
+                <div class="section-header">
+                    <span class="section-number" style="font-size: 48pt; opacity: 0.2;">S2</span>
+                    <h2 style="font-size: 18pt;">SCOPE 2 — Purchased Electricity</h2>
+                </div>
+
+                <div class="data-card mb-2">
+                    <div class="data-card-value">199,898</div>
+                    <div class="data-card-label">tCO₂e — Total Scope 2 (Location-Based)</div>
+                </div>
+
+                <div style="background: white; padding: var(--gap-md); border-radius: 8px; height: 180px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div id="chart-scope2-pie" style="width: 100%; height: 100%;"></div>
+                </div>
+
+                <table class="mt-2" style="font-size: 7.5pt;">
+                    <thead>
+                        <tr>
+                            <th>Supplier</th>
+                            <th>Consumption (MWh)</th>
+                            <th>Emissions (tCO₂e)</th>
+                            <th>%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>MIDELEC</strong></td>
+                            <td>363,636</td>
+                            <td>200,000</td>
+                            <td>80%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>National Grid</strong></td>
+                            <td>83,333</td>
+                            <td>50,000</td>
+                            <td>20%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout-rect mt-2" style="font-size: 8pt;">
+                    ⚠️ <strong>Note:</strong> Emission factors are location-based placeholders. Actual supplier-specific EFs to be obtained from MIDELEC and Egyptian grid authorities.
+                </div>
+
+                <p class="mt-2" style="font-size: 8.5pt; line-height: 1.35;">
+                    MIDOR consumes approximately 447 GWh annually of purchased electricity, primarily sourced from MIDELEC with National Grid serving as backup. The electricity intensity is <strong>153 MWh per kiloton of crude processed</strong>, a key metric for tracking energy efficiency improvements.
+                </p>
+            </div>
+
+            <!-- SCOPE 3 -->
+            <div>
+                <div class="section-header">
+                    <span class="section-number" style="font-size: 48pt; opacity: 0.2;">S3</span>
+                    <h2 style="font-size: 18pt;">SCOPE 3 — Value Chain Emissions</h2>
+                </div>
+
+                <div class="data-card mb-2">
+                    <div class="data-card-value">16,926,521</div>
+                    <div class="data-card-label">tCO₂e — Total Scope 3 (Categories 7 & 11)</div>
+                </div>
+
+                <div style="background: var(--color-navy); color: white; padding: var(--gap-md); border-radius: 8px; margin-bottom: var(--gap-md);">
+                    <h4 style="color: white; margin-bottom: 0.5rem;">Category Breakdown</h4>
+                    <div class="grid-2col" style="gap: 1rem;">
+                        <div>
+                            <div style="font-size: 18pt; font-weight: 700;">48,000</div>
+                            <div style="font-size: 8pt; opacity: 0.9;">tCO₂e | Cat. 7 Employee Commute</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 18pt; font-weight: 700;">16,878,521</div>
+                            <div style="font-size: 8pt; opacity: 0.9;">tCO₂e | Cat. 11 Use of Sold Products</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(255,153,51,0.08); padding: 0.7rem; border-radius: 4px; margin-bottom: 0.8rem; border-left: 3px solid var(--color-accent-orange);">
+                    <p style="font-size: 8pt; line-height: 1.3; margin: 0 0 0.2rem 0; font-weight: bold;">Scope 3 Category Completeness:</p>
+                    <p style="font-size: 7.5pt; line-height: 1.3; margin: 0;">
+                        Only Scope 3 Categories 7 (Employee Commuting) and 11 (Use of Sold Products) are quantified in this inventory. Other categories (1-6, 8-10, 12-15) are excluded due to data availability constraints. This exclusion approach follows GHG Protocol guidance requiring disclosure and justification of exclusions.
+                    </p>
+                </div>
+
+                <h4>Category 11: Product-Level Emissions</h4>
+                <table style="font-size: 7.5pt; margin-top: 0.5rem;">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Emissions (tCO₂e)</th>
+                            <th>% of Cat. 11</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Diesel/Gasoil</td>
+                            <td>12,239,500</td>
+                            <td>35.0%</td>
+                        </tr>
+                        <tr>
+                            <td>Gasoline</td>
+                            <td>10,491,000</td>
+                            <td>30.0%</td>
+                        </tr>
+                        <tr>
+                            <td>Jet Fuel/Kerosene</td>
+                            <td>5,245,500</td>
+                            <td>15.0%</td>
+                        </tr>
+                        <tr>
+                            <td>Fuel Oil</td>
+                            <td>3,497,000</td>
+                            <td>10.0%</td>
+                        </tr>
+                        <tr>
+                            <td>LPG</td>
+                            <td>2,797,600</td>
+                            <td>8.0%</td>
+                        </tr>
+                        <tr>
+                            <td>Petroleum Coke</td>
+                            <td>699,400</td>
+                            <td>2.0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="mt-2" style="font-size: 8.5pt; line-height: 1.35;">
+                    Category 11 emissions represent the combustion of refined products sold by MIDOR and consumed by end users. This is inherent to the refining business model and represents the largest share of our total inventory. Diesel and gasoline together account for 65% of product-use emissions.
+                </p>
+
+                <div class="callout-rect mt-2" style="background: var(--color-accent-orange); color: white; font-size: 8pt;">
+                    <strong>Context:</strong> Scope 3 Cat. 11 accounts for 94.4% of MIDOR's total footprint, typical for petroleum refineries where downstream product combustion dominates.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MITIGATION ROADMAP ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="mt-3">Mitigation Roadmap — Pathway to 2030</h2>
+            </div>
+
+            <div class="grid-asymmetric" style="height: calc(100% - 80px);">
+                <!-- Timeline (Left - wider) -->
+                <div>
+                    <div style="background: linear-gradient(135deg, rgba(0, 163, 163, 0.1) 0%, rgba(0, 78, 137, 0.1) 100%); padding: var(--gap-md); border-radius: 8px; height: 100%;">
+                        <h3 style="margin-bottom: var(--gap-md);">Strategic Initiatives 2026-2030</h3>
+
+                        <!-- Timeline Items -->
+                        <div style="display: grid; gap: var(--gap-md);">
+                            <div style="display: grid; grid-template-columns: 80px 1fr; gap: var(--gap-md); align-items: center;">
+                                <div style="background: var(--color-primary); color: white; padding: 0.5rem; border-radius: 8px; text-align: center; font-weight: 700; font-size: 14pt;">
+                                    2026
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.3rem;">Energy Management System (ISO 50001)</h4>
+                                    <p style="font-size: 8pt; line-height: 1.3; margin: 0;">Implement certified EMS to systematically monitor and optimize energy consumption. Establish baseline and identify 5-10% savings opportunities.</p>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 80px 1fr; gap: var(--gap-md); align-items: center;">
+                                <div style="background: var(--color-accent-orange); color: white; padding: 0.5rem; border-radius: 8px; text-align: center; font-weight: 700; font-size: 14pt;">
+                                    2026
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.3rem;">U_37 Boilers Optimization</h4>
+                                    <p style="font-size: 8pt; line-height: 1.3; margin: 0;">Optimize combustion efficiency for U_37 boiler complex (largest emitter: 190,000 tCO₂e/year). Target 3-5% fuel savings through air/fuel ratio control. <strong>Impact:</strong> ~7,000 tCO₂e/year reduction</p>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 80px 1fr; gap: var(--gap-md); align-items: center;">
+                                <div style="background: var(--color-secondary); color: white; padding: 0.5rem; border-radius: 8px; text-align: center; font-weight: 700; font-size: 14pt;">
+                                    2027
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.3rem;">Flare Gas Recovery System</h4>
+                                    <p style="font-size: 8pt; line-height: 1.3; margin: 0;">Install flare gas recovery compressor and fuel gas header integration to capture and reuse flared hydrocarbons. Target 40-50% flare reduction. <strong>Impact:</strong> ~4,000 tCO₂e/year reduction</p>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 80px 1fr; gap: var(--gap-md); align-items: center;">
+                                <div style="background: var(--color-navy); color: white; padding: 0.5rem; border-radius: 8px; text-align: center; font-weight: 700; font-size: 14pt;">
+                                    2028
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.3rem;">Advanced Process Control (APC) Implementation</h4>
+                                    <p style="font-size: 8pt; line-height: 1.3; margin: 0;">Deploy APC on critical units (CDU, VDU, hydrotreaters) for real-time optimization of yields, energy consumption, and operating stability. Target 2-3% efficiency improvement. <strong>Impact:</strong> ~12,000 tCO₂e/year reduction</p>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 80px 1fr; gap: var(--gap-md); align-items: center;">
+                                <div style="background: var(--color-teal-dark); color: white; padding: 0.5rem; border-radius: 8px; text-align: center; font-weight: 700; font-size: 14pt;">
+                                    2029
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.3rem;">LDAR Enhancement for Fugitives</h4>
+                                    <p style="font-size: 8pt; line-height: 1.3; margin: 0;">Enhanced leak detection program targeting current 3,277 tCO₂e fugitive emissions. OGI cameras, quarterly surveys, rapid repair protocols. <strong>Impact:</strong> ~1,000 tCO₂e/year reduction</p>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 80px 1fr; gap: var(--gap-md); align-items: center;">
+                                <div style="background: var(--color-accent-yellow); color: var(--color-navy); padding: 0.5rem; border-radius: 8px; text-align: center; font-weight: 700; font-size: 14pt;">
+                                    2030
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.3rem;">Solar PV Pilot Installation</h4>
+                                    <p style="font-size: 8pt; line-height: 1.3; margin: 0;">Install rooftop solar panels on administrative buildings and warehouses (500-1,000 kW capacity). Evaluate feasibility for larger-scale deployment. <strong>Impact:</strong> ~800 tCO₂e/year reduction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Cards (Right) -->
+                <div>
+                    <div class="data-card mb-2">
+                        <div class="data-card-value">24,800</div>
+                        <div class="data-card-label">tCO₂e/year<br>Total Reduction Potential</div>
+                    </div>
+
+                    <div class="data-card mb-2" style="background: var(--color-accent-orange); color: white;">
+                        <div class="data-card-value" style="color: white;">~0.8%</div>
+                        <div class="data-card-label" style="color: white;">of Scope 1+2 Baseline<br>(by 2030)</div>
+                    </div>
+
+                    <div style="background: var(--color-off-white); padding: var(--gap-md); border-radius: 8px; margin-bottom: var(--gap-md);">
+                        <h4>Investment Areas</h4>
+                        <div style="font-size: 8pt; line-height: 1.4;">
+                            <div class="flow-step" style="margin: 0.3rem 0;">Energy Efficiency</div>
+                            <div class="flow-step" style="margin: 0.3rem 0;">Renewable Energy</div>
+                            <div class="flow-step" style="margin: 0.3rem 0;">Process Optimization</div>
+                            <div class="flow-step" style="margin: 0.3rem 0;">Fugitive Reduction</div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--color-navy); color: white; padding: var(--gap-md); border-radius: 8px;">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">Long-Term Vision</h4>
+                        <p style="font-size: 8pt; line-height: 1.3;">
+                            Beyond 2030, MIDOR will explore hydrogen fuel transition, carbon capture (CCUS), renewable PPAs, circular economy initiatives, and AI-driven process optimization.
+                        </p>
+                    </div>
+
+                    <div class="callout-rect mt-2" style="font-size: 7.5pt; line-height: 1.3;">
+                        ⚠️ Reduction estimates are preliminary. Detailed engineering and business case analyses will refine projections before implementation.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 3: BOUNDARIES ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">07</span>
+                <h2 class="mt-3">BOUNDARIES</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <div>
+                    <h3>Organizational Boundary</h3>
+                    <div class="data-card mb-2" style="background: var(--color-primary); color: white;">
+                        <div style="font-size: 12pt; font-weight: 700; margin-bottom: 0.3rem;">OPERATIONAL CONTROL</div>
+                        <div style="font-size: 7.5pt; line-height: 1.3;">MIDOR accounts for 100% of GHG emissions from operations over which it has full authority to introduce and implement policies</div>
+                    </div>
+
+                    <h4>Operational Boundary: Scope Inclusion</h4>
+                    <table style="font-size: 7pt; margin-top: 0.5rem;">
+                        <thead>
+                            <tr><th>Category</th><th>Sources</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Stationary Combustion</strong></td><td>Heaters, boilers, incinerators</td><td>✓</td></tr>
+                            <tr><td><strong>Flaring</strong></td><td>Continuous and emergency flare</td><td>✓</td></tr>
+                            <tr><td><strong>Process Emissions</strong></td><td>H₂ prod, catalyst regen, SRU</td><td>✓</td></tr>
+                            <tr><td><strong>Fugitive</strong></td><td>Tanks, loading, wastewater, refrigerants</td><td>✓</td></tr>
+                            <tr><td><strong>Mobile Combustion</strong></td><td>On-site vehicles (diesel)</td><td>✓</td></tr>
+                            <tr><td><strong>Purchased Electricity</strong></td><td>MIDELEC + National Grid</td><td>✓</td></tr>
+                            <tr><td><strong>Scope 3 Cat. 7</strong></td><td>Employee commuting</td><td>✓</td></tr>
+                            <tr><td><strong>Scope 3 Cat. 11</strong></td><td>Use of sold products</td><td>✓</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>Exclusions & Rationale</h3>
+                    <div style="font-size: 7.5pt; line-height: 1.35;">
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-gray-mid);">
+                            <strong>❌ Biomass CO₂:</strong> Minimal to zero biomass use; if present in future, will be separately tracked per ISO 14064-1
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-gray-mid);">
+                            <strong>❌ Scope 3 (other categories):</strong> Categories 1-6, 8-10, 12-15 not yet quantified; future inventories may expand coverage
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-gray-mid);">
+                            <strong>❌ Downstream leased assets:</strong> MIDOR does not lease assets to third parties
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-gray-mid);">
+                            <strong>❌ Land use change:</strong> No land use change activities within reporting period
+                        </div>
+                    </div>
+
+                    <div class="callout-rect mt-2" style="font-size: 7.5pt;">
+                        ⚠️ Exclusions list subject to annual review. Any material category excluded must be justified based on relevance and materiality thresholds.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 4: METHODS & FACTORS ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">08</span>
+                <h2 class="mt-3">METHODS & FACTORS</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <div>
+                    <h3>GHG Gases & Global Warming Potentials</h3>
+                    <table style="font-size: 7pt; margin-top: 0.5rem; margin-bottom: var(--gap-md);">
+                        <thead>
+                            <tr><th>Gas</th><th>Formula</th><th>GWP (AR6)</th><th>Sources</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>CO₂</strong></td><td>CO₂</td><td>1</td><td>Combustion, processes</td></tr>
+                            <tr><td><strong>Methane</strong></td><td>CH₄</td><td>27.9</td><td>Combustion, fugitives</td></tr>
+                            <tr><td><strong>Nitrous Oxide</strong></td><td>N₂O</td><td>273</td><td>Combustion, wastewater</td></tr>
+                            <tr><td><strong>HFCs</strong></td><td>Various</td><td>100s-1000s</td><td>Refrigerants</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Key Equations</h4>
+                    <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; font-family: monospace; font-size: 7pt; line-height: 1.4; margin-bottom: 0.5rem;">
+                        <strong>Stationary Combustion:</strong><br>
+                        CO₂ = Fuel × Carbon_fraction × (44/12) × Oxidation<br>
+                        CH₄ = Fuel × EF_CH4 × GWP(27.9)<br>
+                        N₂O = Fuel × EF_N2O × GWP(273)
+                    </div>
+
+                    <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; font-family: monospace; font-size: 7pt; line-height: 1.4; margin-bottom: 0.5rem;">
+                        <strong>Scope 2:</strong><br>
+                        Emissions = Σ(MWh_supplier × EF_supplier)
+                    </div>
+
+                    <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; font-family: monospace; font-size: 7pt; line-height: 1.4;">
+                        <strong>Scope 3 Cat 11:</strong><br>
+                        Emissions = Σ(Product_sold × Use-phase_EF)
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Quantification Methods Register</h3>
+                    <table style="font-size: 6.5pt;">
+                        <thead>
+                            <tr><th>Source</th><th>Method</th><th>Data Source</th><th>EF Reference</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Fuel Gas</td><td>Carbon balance</td><td>DCS + GC</td><td>Site-specific</td></tr>
+                            <tr><td>Fuel Oil/Diesel</td><td>Consumption × EF</td><td>Invoices</td><td>API/IPCC</td></tr>
+                            <tr><td>Flaring</td><td>Flow + DRE</td><td>Flow meter</td><td>EPA AP-42</td></tr>
+                            <tr><td>H₂ Production</td><td>Mass balance</td><td>H₂ meter</td><td>Stoichiometry</td></tr>
+                            <tr><td>Tanks</td><td>EPA TANKS</td><td>Throughput</td><td>EPA/API</td></tr>
+                            <tr><td>Loading</td><td>AP-42 factors</td><td>Volumes</td><td>EPA AP-42</td></tr>
+                            <tr><td>Wastewater</td><td>IPCC guidelines</td><td>COD/BOD</td><td>IPCC 2006</td></tr>
+                            <tr><td>Refrigerants</td><td>Mass balance</td><td>Maintenance logs</td><td>AR6 GWPs</td></tr>
+                            <tr><td>Electricity</td><td>Consumption × Grid EF</td><td>Invoices</td><td>Supplier/Grid avg</td></tr>
+                            <tr><td>Sold Products</td><td>Sales × Combustion EF</td><td>Sales data</td><td>IPCC/EPA</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="mt-2">Emission Factor Status</h4>
+                    <table style="font-size: 6.5pt; margin-top: 0.5rem;">
+                        <thead>
+                            <tr><th>Source</th><th>EF Value</th><th>Unit</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Fuel Gas CO₂</td><td>Site-specific</td><td>kg/Nm³</td><td class="placeholder-note" style="font-size: 6pt;">TO BE MEASURED</td></tr>
+                            <tr><td>Diesel CO₂</td><td>74.1</td><td>kg/GJ</td><td>✓ IPCC</td></tr>
+                            <tr><td>MIDELEC Grid</td><td>0.55</td><td>tCO₂e/MWh</td><td class="placeholder-note" style="font-size: 6pt;">PLACEHOLDER</td></tr>
+                            <tr><td>Gasoline (use)</td><td>69.3</td><td>kg/GJ</td><td>✓ IPCC</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 9: INTENSITIES & TRENDS ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">09</span>
+                <h2 class="mt-3">INTENSITIES & TRENDS</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <div>
+                    <h3>Carbon Intensity Metrics</h3>
+                    <div class="data-card mb-2">
+                        <div class="data-card-value">482</div>
+                        <div class="data-card-label">tCO₂e per kiloton of crude processed<br>(Scope 1+2 / Crude throughput)</div>
+                    </div>
+
+                    <div class="data-card mb-2" style="background: var(--color-accent-orange); color: white;">
+                        <div class="data-card-value" style="color: white;">0.047</div>
+                        <div class="data-card-label" style="color: white;">tCO₂e per GJ of fired duty<br>(Scope 1 stationary / Total fired duty)</div>
+                    </div>
+
+                    <h4>Calculation Details</h4>
+                    <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; font-size: 7.5pt; line-height: 1.4; margin-bottom: 0.5rem;">
+                        <strong>Intensity 1:</strong><br>
+                        (2,813,318 + 199,898) tCO₂e ÷ 6,256 kton crude = <strong>482 tCO₂e/kton</strong>
+                    </div>
+
+                    <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; font-size: 7.5pt; line-height: 1.4;">
+                        <strong>Intensity 2:</strong><br>
+                        2,608,831 tCO₂e ÷ 56,021,000 GJ = <strong>0.047 tCO₂e/GJ</strong>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Baseline Year & Multi-Year Tracking</h3>
+                    <div style="background: var(--color-primary); color: white; padding: var(--gap-md); border-radius: 8px; text-align: center; margin-bottom: var(--gap-md);">
+                        <div style="font-size: 14pt; font-weight: 700;">2024 = REPORTING YEAR (No Base Year)</div>
+                        <div style="font-size: 8pt; margin-top: 0.3rem; opacity: 0.9;">All future inventories will compare against this baseline</div>
+                    </div>
+
+                    <h4>Future Trend Analysis</h4>
+                    <p style="font-size: 7.5pt; line-height: 1.35;">
+                        As MIDOR develops a time-series dataset (2025, 2026, 2027...), the following trend analyses will be included:
+                    </p>
+                    <ul style="font-size: 7.5pt; line-height: 1.35; margin-left: 1.5rem;">
+                        <li>Absolute emissions trends by scope and category</li>
+                        <li>Intensity metric trends (both crude-based and energy-based)</li>
+                        <li>Correlation with production changes, efficiency projects, mitigation initiatives</li>
+                        <li>Benchmarking against peer refineries and industry averages</li>
+                    </ul>
+
+                    <h4 class="mt-2">Data Quality Improvement</h4>
+                    <p style="font-size: 7.5pt; line-height: 1.35;">
+                        Year-over-year, MIDOR will refine data collection methods, reduce uncertainties, and expand monitoring coverage (real-time flare meters, LDAR programs, CEMS).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 10: BASE YEAR & RECALCULATION ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">10</span>
+                <h2 class="mt-3">BASE YEAR & RECALCULATION POLICY</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <div>
+                    <h3>Base Year Selection</h3>
+                    <div class="data-card mb-2" style="background: var(--color-accent-orange); color: white;">
+                        <div class="data-card-value" style="color: white; font-size: 32pt;">NO BASE YEAR</div>
+                        <div class="data-card-label" style="color: white;">Selected Yet — 2024 is Reporting Year Only</div>
+                    </div>
+
+                    <h4>Rationale for Not Selecting Base Year</h4>
+                    <ul style="font-size: 7.5pt; line-height: 1.35; margin-left: 1.5rem;">
+                        <li>Refinery undergoing major revamp projects during 2024</li>
+                        <li>Operations are unstable and not representative of normal conditions</li>
+                        <li>Current emissions data are unusually high and unpredictable</li>
+                        <li>Using this abnormal period as baseline would give inaccurate performance picture</li>
+                        <li>Base year will be selected AFTER revamps complete and operations stabilize</li>
+                    </ul>
+
+                    <h4 class="mt-2">Future Base Year Selection Criteria</h4>
+                    <p style="font-size: 7.5pt; line-height: 1.35; margin-top: 0.5rem;">
+                        Once operations stabilize, MIDOR will select a base year that represents typical operational performance, has complete data coverage, and can serve as a meaningful comparison point for tracking emissions reduction progress.
+                    </p>
+
+                    <h4 class="mt-2">Significance Threshold</h4>
+                    <div class="data-card" style="background: var(--color-navy); color: white;">
+                        <div class="data-card-value" style="color: white; font-size: 36pt;">5%</div>
+                        <div class="data-card-label" style="color: white;">Materiality threshold for base year recalculation triggers (when established)</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Recalculation Triggers (When Base Year Established)</h3>
+                    <p style="font-size: 7pt; line-height: 1.3; margin-bottom: 0.5rem; font-style: italic;">
+                        The following policy will apply once MIDOR selects a base year:
+                    </p>
+                    <table style="font-size: 7pt;">
+                        <thead>
+                            <tr><th>Trigger</th><th>Description</th><th>Threshold</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Structural Change</strong></td><td>Merger, acquisition, divestiture, closure</td><td>>5%</td></tr>
+                            <tr><td><strong>Boundary Change</strong></td><td>Change in control, facility add/removal</td><td>>5%</td></tr>
+                            <tr><td><strong>Method Change</strong></td><td>Updated EFs, improved measurement</td><td>>5%</td></tr>
+                            <tr><td><strong>Data Error</strong></td><td>Significant error discovered in base year</td><td>>5%</td></tr>
+                            <tr><td><strong>Policy Update</strong></td><td>New GWPs, regulatory requirement</td><td>As required</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="mt-2">Recalculation Process (Future Application)</h4>
+                    <div style="font-size: 7.5pt; line-height: 1.35;">
+                        <div class="flow-step" style="margin: 0.3rem 0;">1. Identify trigger event & assess materiality</div>
+                        <div class="flow-step" style="margin: 0.3rem 0;">2. Document reason for recalculation</div>
+                        <div class="flow-step" style="margin: 0.3rem 0;">3. Recalculate base year with updated data/methods</div>
+                        <div class="flow-step" style="margin: 0.3rem 0;">4. Recalculate all subsequent years for consistency</div>
+                        <div class="flow-step" style="margin: 0.3rem 0;">5. Disclose in report with clear explanation</div>
+                        <div class="flow-step" style="margin: 0.3rem 0;">6. Archive both original and recalculated</div>
+                        <div class="flow-step" style="margin: 0.3rem 0;">7. Obtain management approval</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 11: UNCERTAINTY & QUALITY ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">11</span>
+                <h2 class="mt-3">UNCERTAINTY & QUALITY</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <div>
+                    <h3>Quantitative Uncertainty Estimates</h3>
+                    <table style="font-size: 6.5pt;">
+                        <thead>
+                            <tr><th>Category</th><th>Emissions (tCO₂e)</th><th>Uncertainty (±%)</th><th>Lower (95% CI)</th><th>Upper (95% CI)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Stationary Combustion</td><td>2,608,831</td><td>±2.5%</td><td>2,543,610</td><td>2,674,052</td></tr>
+                            <tr><td>Process Emissions</td><td>200,520</td><td>±5.0%</td><td>190,494</td><td>210,546</td></tr>
+                            <tr><td>Fugitive Emissions</td><td>3,277</td><td>±25%</td><td>2,458</td><td>4,096</td></tr>
+                            <tr><td>Mobile Combustion</td><td>690</td><td>±10%</td><td>621</td><td>759</td></tr>
+                            <tr><td><strong>Scope 1 TOTAL</strong></td><td><strong>2,813,318</strong></td><td><strong>±2.66%</strong></td><td>2,738,469</td><td>2,888,167</td></tr>
+                            <tr><td>Scope 2 Electricity</td><td>199,898</td><td>±11.18%</td><td>177,540</td><td>222,256</td></tr>
+                            <tr><td>Scope 3 Cat. 7+11</td><td>16,926,521</td><td>±16.68%</td><td>14,104,098</td><td>19,748,944</td></tr>
+                            <tr style="background: var(--color-off-white);"><td><strong>TOTAL INVENTORY</strong></td><td><strong>19,939,737</strong></td><td><strong>±14.17%</strong></td><td>17,112,295</td><td>22,767,179</td></tr>
+                        </tbody>
+                    </table>
+
+                    <p style="font-size: 7pt; margin-top: 0.5rem; font-style: italic;">
+                        Uncertainty calculated using error propagation methodology per IPCC guidelines. Combined uncertainties calculated as √(σ²_AD + σ²_EF) for each activity.
+                    </p>
+
+                    <!-- ISO 14064-1 REQUIRED: Uncertainty Impact Assessment -->
+                    <div class="mt-2" style="background: linear-gradient(135deg, rgba(255,153,51,0.12), rgba(255,204,0,0.12)); padding: var(--gap-sm); border-radius: 6px; border-left: 4px solid var(--color-accent-orange);">
+                        <h4 style="font-size: 9pt; margin: 0 0 0.3rem 0; color: var(--color-navy);">📊 Impact of Uncertainty on Inventory Accuracy (ISO 14064-1 §9.3p-q)</h4>
+                        <p style="font-size: 7.5pt; line-height: 1.35; margin: 0 0 0.3rem 0;">
+                            Based on the estimated uncertainty ranges using IPCC propagation methods (95% confidence interval):
+                        </p>
+                        <ul style="font-size: 7.5pt; line-height: 1.3; margin: 0 0 0.3rem 0.8rem; padding-left: 0.5rem;">
+                            <li><strong>Scope 1:</strong> 2,813,318 ± 2.66% tCO₂e (range: 2,738,469 - 2,888,167 tCO₂e)</li>
+                            <li><strong>Scope 2:</strong> 199,898 ± 11.18% tCO₂e (range: 177,540 - 222,256 tCO₂e)</li>
+                            <li><strong>Scope 3 Cat. 7+11:</strong> 16,926,521 ± 16.68% tCO₂e (range: 14,104,098 - 19,748,944 tCO₂e)</li>
+                            <li><strong>Overall Inventory:</strong> 19,939,737 ± 14.17% tCO₂e (95% CI: 17.1M - 22.8M)</li>
+                        </ul>
+                        <p style="font-size: 7.5pt; line-height: 1.35; margin: 0;">
+                            <strong>Main uncertainty drivers:</strong> Scope 3 use-phase emissions (±16.68% due to product mix assumptions), grid emission factors (±11.18%), and fugitive emissions estimation (±25% due to measurement limitations). Scope 1 stationary combustion has lowest uncertainty (±2.5%) due to site-specific fuel gas composition analysis and continuous DCS metering.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Data Quality Improvement Roadmap</h3>
+                    <table style="font-size: 6.5pt;">
+                        <thead>
+                            <tr><th>Priority</th><th>Action</th><th>Target</th><th>Impact</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>High</td><td>Increase fuel gas GC frequency</td><td>Stationary</td><td>±8% → ±5%</td></tr>
+                            <tr><td>High</td><td>Install/calibrate flare meters</td><td>Flaring</td><td>Replace estimation</td></tr>
+                            <tr><td>High</td><td>LDAR program with OGI</td><td>Fugitives</td><td>±25% → ±15%</td></tr>
+                            <tr><td>Medium</td><td>TANKS modeling (EPA)</td><td>Tank fugitives</td><td>Site-specific EFs</td></tr>
+                            <tr><td>Medium</td><td>Refrigerant tracking system</td><td>HFC leaks</td><td>Accurate mass balance</td></tr>
+                            <tr><td>Low</td><td>Wastewater CH₄ measurement</td><td>Wastewater</td><td>Replace IPCC defaults</td></tr>
+                            <tr><td>High</td><td>Obtain supplier-specific grid EFs</td><td>Scope 2</td><td>Replace placeholders</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== ACKNOWLEDGEMENTS ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">12</span>
+                <h2 class="handwritten mt-3">Acknowledgements</h2>
+            </div>
+
+            <p style="font-size: 9pt; line-height: 1.5;">
+                We express our profound gratitude and sincere appreciation to all the lecturers, engineers, and the dedicated team whose invaluable efforts and expertise made the comprehensive course on Greenhouse Gas (GHG) management a resounding success.
+            </p>
+
+            <h3 class="mt-2">Special Thanks to Our Instructors</h3>
+
+            <div class="grid-2col" style="gap: 1rem;">
+                <div>
+                    <ul style="font-size: 8.5pt; line-height: 1.6;">
+                        <li><strong>Eng. Nagy Abdul-Dayem</strong> - Climate Change and Carbon Footprint in the Petroleum Sector</li>
+                        <li><strong>Eng. Ekram Saeed</strong> - ISO 14064-1 and ISO/TR 14069:2013</li>
+                        <li><strong>Eng. Reham Beder</strong> - ISO 14067:2018</li>
+                        <li><strong>Eng. Mohamed Abdel Moneim</strong> - ISO 14040/14044:2006 and Uncertainty Estimation in Carbon Footprint Reports</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul style="font-size: 8.5pt; line-height: 1.6;">
+                        <li><strong>Eng. Fatma Ali</strong> - ISO 14064-2:2018</li>
+                        <li><strong>Dr. Ayman El-Refai</strong> - Carbon Markets & Credits</li>
+                        <li><strong>Eng. Noha Attia</strong> - GHG Protocol Methodology and Practical Training</li>
+                        <li><strong>Eng. Islam Amin</strong> - ISO 14064-3:2019 and IPCC Guidelines</li>
+                        <li><strong>Eng. Adel Taha</strong> - Carbon Border Adjustment Mechanism (CBAM)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="font-size: 9pt; line-height: 1.5; margin-top: 1rem;">
+                We are also deeply thankful to the entire organizing team for the seamless coordination of both the in-person sessions in Alexandria and the online segments. Your collective commitment to advancing knowledge in carbon footprint accounting, international standards, and climate change mechanisms has been truly inspiring and immensely beneficial.
+            </p>
+
+            <div class="callout mt-3" style="background: var(--color-teal-dark); color: white; text-align: center; padding: 2rem;">
+                <h3 style="margin: 0; font-size: 12pt;">Report Prepared By</h3>
+                <div class="grid-2col mt-2" style="gap: 2rem;">
+                    <div>
+                        <p style="margin: 0.5rem 0; font-size: 9pt;"><strong>Amr Abo-Mady</strong><br>G. Ass. Manager<br>Technology & Development<br>EPROM</p>
+                        <p style="margin: 0.5rem 0; font-size: 9pt;"><strong>Ahmed Sabri</strong><br>Dept. Manager</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0.5rem 0; font-size: 9pt;"><strong>Ahmed Mabrouk</strong><br>Dept. Manager</p>
+                        <p style="margin: 0.5rem 0; font-size: 9pt;"><strong>Tarek Mohammed</strong><br>Engineer<br>Maintenance Planning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== APPENDIX A: GLOSSARY ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">A</span>
+                <h2 class="mt-3">APPENDIX A: GLOSSARY & ABBREVIATIONS</h2>
+            </div>
+
+            <div class="text-3col" style="font-size: 7pt; line-height: 1.3; height: calc(100% - 80px);">
+                <p><strong>API:</strong> American Petroleum Institute</p>
+                <p><strong>AR6:</strong> IPCC Sixth Assessment Report (2021)</p>
+                <p><strong>BPSD:</strong> Barrels Per Stream Day</p>
+                <p><strong>CCR:</strong> Continuous Catalyst Regeneration</p>
+                <p><strong>CEMS:</strong> Continuous Emissions Monitoring System</p>
+                <p><strong>CH₄:</strong> Methane</p>
+                <p><strong>CO₂:</strong> Carbon Dioxide</p>
+                <p><strong>CO₂e:</strong> Carbon Dioxide Equivalent</p>
+                <p><strong>DCS:</strong> Distributed Control System</p>
+                <p><strong>DEFRA:</strong> UK Dept for Environment, Food & Rural Affairs</p>
+                <p><strong>DRE:</strong> Destruction and Removal Efficiency</p>
+                <p><strong>EF:</strong> Emission Factor</p>
+                <p><strong>EPA:</strong> U.S. Environmental Protection Agency</p>
+                <p><strong>GC:</strong> Gas Chromatography</p>
+                <p><strong>GHG:</strong> Greenhouse Gas</p>
+                <p><strong>GJ:</strong> Gigajoule</p>
+                <p><strong>GWP:</strong> Global Warming Potential</p>
+                <p><strong>HFC:</strong> Hydrofluorocarbon</p>
+                <p><strong>IPCC:</strong> Intergovernmental Panel on Climate Change</p>
+                <p><strong>ISO 14064-1:</strong> GHG inventory standard</p>
+                <p><strong>ISO 14069:</strong> GHG guidance standard</p>
+                <p><strong>kton:</strong> Kiloton (1,000 metric tons)</p>
+                <p><strong>LDAR:</strong> Leak Detection and Repair</p>
+                <p><strong>LHV:</strong> Lower Heating Value</p>
+                <p><strong>LPG:</strong> Liquefied Petroleum Gas</p>
+                <p><strong>Mt:</strong> Million metric tons (Megatons)</p>
+                <p><strong>MWh:</strong> Megawatt-hour</p>
+                <p><strong>N₂O:</strong> Nitrous Oxide</p>
+                <p><strong>OGI:</strong> Optical Gas Imaging</p>
+                <p><strong>PI:</strong> OSIsoft PI System</p>
+                <p><strong>PPA:</strong> Power Purchase Agreement</p>
+                <p><strong>QA/QC:</strong> Quality Assurance/Quality Control</p>
+                <p><strong>Scope 1:</strong> Direct GHG emissions</p>
+                <p><strong>Scope 2:</strong> Indirect emissions from purchased energy</p>
+                <p><strong>Scope 3:</strong> Other indirect value chain emissions</p>
+                <p><strong>SMR:</strong> Steam Methane Reforming</p>
+                <p><strong>SRU:</strong> Sulfur Recovery Unit</p>
+                <p><strong>tCO₂e:</strong> Metric tons CO₂ equivalent</p>
+                <p><strong>ULSD:</strong> Ultra-Low Sulfur Diesel</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== APPENDIX B: EQUATIONS & EFs ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">B</span>
+                <h2 class="mt-3">APPENDIX B: EQUATIONS & EMISSION FACTORS</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <div>
+                    <h3>Detailed Equations</h3>
+                    <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; font-family: monospace; font-size: 6.5pt; line-height: 1.4; margin-bottom: 0.5rem;">
+                        <strong>Stationary Combustion (Fuel Gas):</strong><br>
+                        CO₂ = Fuel_volume (Nm³) × Carbon_content (kg C/Nm³) × (44/12) × Oxidation_factor<br>
+                        Where: Carbon_content from GC analysis, Oxidation_factor = 0.995<br><br>
+                        CH₄ = Fuel_volume × EF_CH₄ (kg CH₄/Nm³) × GWP(27.9)<br>
+                        N₂O = Fuel_volume × EF_N₂O (kg N₂O/Nm³) × GWP(273)
+                    </div>
+
+                    <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; font-family: monospace; font-size: 6.5pt; line-height: 1.4; margin-bottom: 0.5rem;">
+                        <strong>Flaring:</strong><br>
+                        CO₂ = Flare_gas_volume × Carbon_content × (44/12) × DRE<br>
+                        CH₄_slip = Flare_gas_volume × CH₄_fraction × (1 - DRE) × GWP(27.9)<br>
+                        Where: DRE = 0.999 (99.9%)
+                    </div>
+
+                    <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; font-family: monospace; font-size: 6.5pt; line-height: 1.4;">
+                        <strong>Storage Tank Losses (API):</strong><br>
+                        Breathing_losses = V_vapor × ρ_vapor × N_cycles<br>
+                        Working_losses = (Throughput / Turnover) × ρ_vapor × (1 - η_control)
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Emission Factor Reference Table</h3>
+                    <table style="font-size: 6pt;">
+                        <thead>
+                            <tr><th>Source</th><th>EF</th><th>Unit</th><th>Reference</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Fuel Gas CO₂</td><td>Site-specific</td><td>kg/Nm³</td><td>Lab GC</td><td class="placeholder-note" style="font-size: 5.5pt;">TO BE MEASURED</td></tr>
+                            <tr><td>Fuel Gas CH₄</td><td>0.00001</td><td>kg/Nm³</td><td>API</td><td>DEFAULT</td></tr>
+                            <tr><td>Fuel Gas N₂O</td><td>0.0000001</td><td>kg/Nm³</td><td>IPCC 2006</td><td>DEFAULT</td></tr>
+                            <tr><td>Fuel Oil CO₂</td><td>77.4</td><td>kg/GJ</td><td>IPCC 2006</td><td>DEFAULT</td></tr>
+                            <tr><td>Diesel CO₂</td><td>74.1</td><td>kg/GJ</td><td>IPCC 2006</td><td>✓ IPCC</td></tr>
+                            <tr><td>Natural Gas CO₂</td><td>56.1</td><td>kg/GJ</td><td>IPCC 2006</td><td>✓ IPCC</td></tr>
+                            <tr><td>Gasoline (use)</td><td>69.3</td><td>kg/GJ</td><td>IPCC 2006</td><td>✓ IPCC</td></tr>
+                            <tr><td>Diesel (use)</td><td>74.1</td><td>kg/GJ</td><td>IPCC 2006</td><td>✓ IPCC</td></tr>
+                            <tr><td>Jet Fuel (use)</td><td>71.5</td><td>kg/GJ</td><td>IPCC 2006</td><td>✓ IPCC</td></tr>
+                            <tr><td>LPG (use)</td><td>63.1</td><td>kg/GJ</td><td>IPCC 2006</td><td>✓ IPCC</td></tr>
+                            <tr><td>Pet Coke (use)</td><td>97.5</td><td>kg/GJ</td><td>IPCC 2006</td><td>✓ IPCC</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== APPENDIX C: ACTIVITY MAPPING ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">C</span>
+                <h2 class="mt-3">APPENDIX C: ACTIVITY-TO-METHOD MAPPING</h2>
+            </div>
+
+            <p style="font-size: 7.5pt; margin-bottom: var(--gap-md);">Cross-reference between emission activities (from MIDOR activities.xlsx) and quantification methods applied.</p>
+
+            <table style="font-size: 6pt; height: calc(100% - 120px);">
+                <thead>
+                    <tr><th>Activity</th><th>Sub-Activity</th><th>Method</th><th>Data Source</th><th>Classification</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Heaters/boilers fuel gas</td><td>U_01 heater</td><td>Carbon mass balance</td><td>DCS + GC</td><td>Stationary Combustion</td></tr>
+                    <tr><td>Heaters/boilers fuel gas</td><td>U_17 heater</td><td>Carbon mass balance</td><td>DCS + GC</td><td>Stationary Combustion</td></tr>
+                    <tr><td>Incinerator</td><td>U_13 firing</td><td>Carbon mass balance</td><td>DCS + GC</td><td>Stationary Combustion</td></tr>
+                    <tr><td>Flare</td><td>Header reading</td><td>Flow + DRE 99.9%</td><td>Flow meter</td><td>Stationary Combustion</td></tr>
+                    <tr><td>H₂ production</td><td>U_09</td><td>Process mass balance</td><td>H₂ meter + NG</td><td>Process Emission</td></tr>
+                    <tr><td>H₂ production</td><td>U_21</td><td>Process mass balance</td><td>H₂ meter + NG</td><td>Process Emission</td></tr>
+                    <tr><td>Catalyst regeneration</td><td>U_04 CCR</td><td>Coke burn-off calc</td><td>Catalyst circulation</td><td>Process Emission</td></tr>
+                    <tr><td>Storage tanks</td><td>Crude tanks</td><td>EPA TANKS / API Ch7</td><td>Tank dimensions</td><td>Fugitive Emission</td></tr>
+                    <tr><td>Storage tanks</td><td>LPG tanks</td><td>EPA TANKS / API Ch7</td><td>Tank dimensions</td><td>Fugitive Emission</td></tr>
+                    <tr><td>Wastewater</td><td>U_54/55</td><td>IPCC wastewater method</td><td>Flow, COD/BOD</td><td>Fugitive Emission</td></tr>
+                    <tr><td>Refrigerants</td><td>All AC units</td><td>Mass balance</td><td>Maintenance logs</td><td>Fugitive Emission</td></tr>
+                    <tr><td>Mobile diesel</td><td>Forklifts</td><td>Consumption × EF</td><td>Fuel receipts</td><td>Mobile Combustion</td></tr>
+                    <tr><td>Electricity</td><td>MIDELEC</td><td>MWh × Grid EF</td><td>Invoices</td><td>Scope 2</td></tr>
+                    <tr><td>Electricity</td><td>National Grid</td><td>MWh × Grid EF</td><td>Invoices</td><td>Scope 2</td></tr>
+                    <tr><td>Employee commute</td><td>-</td><td>Distance × Mode EF</td><td>Admin data (Ayman)</td><td>Scope 3 Cat. 7</td></tr>
+                    <tr><td>Sold products</td><td>Gasoline</td><td>Sales × Use EF</td><td>Commercial data</td><td>Scope 3 Cat. 11</td></tr>
+                    <tr><td>Sold products</td><td>Diesel</td><td>Sales × Use EF</td><td>Commercial data</td><td>Scope 3 Cat. 11</td></tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 6.5pt; margin-top: var(--gap-sm);" class="placeholder-note">
+                ⚠️ Complete mapping includes all 48 activities from MIDOR activities.xlsx. Any activity classified as "pending" requires method assignment before final calculation.
+            </p>
+        </div>
+    </div>
+
+    <!-- ==================== APPENDIX D: DATA SOURCES & QC ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">D</span>
+                <h2 class="mt-3">APPENDIX D: DATA SOURCES & QC CHECKS</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <div>
+                    <h3>Data Source Register</h3>
+                    <table style="font-size: 6.5pt;">
+                        <thead>
+                            <tr><th>Data Type</th><th>Source System</th><th>Responsible Party</th><th>Frequency</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Fuel gas flow rates</td><td>DCS / PI Historian</td><td>Process Engineers</td><td>Continuous</td></tr>
+                            <tr><td>Fuel gas composition</td><td>Laboratory GC</td><td>Laboratory</td><td>Weekly (min)</td></tr>
+                            <tr><td>Fuel oil/diesel</td><td>Tank levels + invoices</td><td>Procurement</td><td>Monthly</td></tr>
+                            <tr><td>Electricity</td><td>Utility invoices</td><td>Procurement</td><td>Monthly</td></tr>
+                            <tr><td>Product sales</td><td>Scheduling Dept invoices</td><td>Scheduling Dept</td><td>Monthly</td></tr>
+                            <tr><td>Flare gas flow</td><td>Flare header meter</td><td>Process Engineers</td><td>Continuous</td></tr>
+                            <tr><td>Refrigerant inventory</td><td>Maintenance logs</td><td>Maintenance</td><td>Quarterly</td></tr>
+                            <tr><td>Mobile fuel</td><td>Vehicle logs</td><td>Fleet Manager</td><td>Monthly</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>QC Checks Performed</h3>
+                    <div style="font-size: 7pt; line-height: 1.4;">
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-primary);">
+                            <strong>✓ Mass Balance:</strong> Total crude vs products + losses (~±2% closure expected)
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-secondary);">
+                            <strong>✓ Energy Balance:</strong> Fuel consumed vs heater/boiler duty (thermal efficiency check)
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-teal-dark);">
+                            <strong>✓ YoY Comparison:</strong> Flag any category change >20% for investigation
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-accent-orange);">
+                            <strong>✓ Peer Review:</strong> Calculations independently verified by second engineer
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-navy);">
+                            <strong>✓ Instrument Calibration:</strong> All critical meters calibrated annually (certificates on file)
+                        </div>
+                        <div style="background: var(--color-off-white); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-gray-mid);">
+                            <strong>✓ Data Completeness:</strong> Check for missing months or gaps in time-series data
+                        </div>
+                    </div>
+
+                    <h4 class="mt-2">Document Retention</h4>
+                    <p style="font-size: 7pt; line-height: 1.35;">
+                        All supporting documentation archived for minimum 7 years:
+                    </p>
+                    <ul style="font-size: 7pt; line-height: 1.35; margin-left: 1.5rem;">
+                        <li>Activity data files (DCS exports, PI queries, invoices)</li>
+                        <li>EF references (journal articles, EPA docs, API guides)</li>
+                        <li>Calculation spreadsheets with version control</li>
+                        <li>QC checklists and peer review sign-offs</li>
+                        <li>Meeting minutes and management approvals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== APPENDIX E: FUTURE ASSURANCE ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">E</span>
+                <h2 class="mt-3">APPENDIX E: VERIFICATION & ASSURANCE</h2>
+            </div>
+
+            <div class="grid-2col" style="height: calc(100% - 80px);">
+                <div>
+                    <h3>Assurance Levels (ISO 14064-3)</h3>
+                    <div class="data-card mb-2" style="background: var(--color-primary); color: white;">
+                        <div style="font-size: 11pt; font-weight: 700; margin-bottom: 0.3rem;">LIMITED ASSURANCE</div>
+                        <div style="font-size: 7.5pt; line-height: 1.3;">Verifier confirms no material misstatements found (negative assurance)</div>
+                    </div>
+
+                    <div class="data-card mb-2" style="background: var(--color-secondary); color: white;">
+                        <div style="font-size: 11pt; font-weight: 700; margin-bottom: 0.3rem;">REASONABLE ASSURANCE</div>
+                        <div style="font-size: 7.5pt; line-height: 1.3;">Verifier provides positive confirmation inventory is free of material misstatement (higher rigor)</div>
+                    </div>
+
+                    <h4>MIDOR's Current Approach</h4>
+                    <p style="font-size: 8pt; line-height: 1.4; margin-bottom: 0.5rem;">
+                        MIDOR has chosen not to pursue third-party verification at this time. Internal quality assurance includes peer review, calculation checks, and data validation processes.
+                    </p>
+                    <p style="font-size: 7.5pt; line-height: 1.3; font-style: italic; color: var(--color-gray-mid);">
+                        If future verification is required, this inventory framework is structured to support ISO 14064-3 verification processes including limited or reasonable assurance engagements with ISO 14065 accredited bodies.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Benefits of External Assurance</h3>
+                    <div style="font-size: 7.5pt; line-height: 1.4;">
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-primary);">
+                            <strong>✓ Enhanced Credibility:</strong> Stakeholder confidence (investors, customers, regulators)
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-secondary);">
+                            <strong>✓ Data Quality:</strong> Identification of improvement opportunities
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; margin-bottom: 0.5rem; border-left: 3px solid var(--color-teal-dark);">
+                            <strong>✓ Compliance:</strong> Voluntary/mandatory reporting schemes (CDP, EU ETS if applicable)
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(0,163,163,0.1), rgba(0,78,137,0.1)); padding: var(--gap-sm); border-radius: 4px; border-left: 3px solid var(--color-accent-orange);">
+                            <strong>✓ Market Readiness:</strong> Preparation for carbon markets or border adjustment mechanisms
+                        </div>
+                    </div>
+
+                    <h4 class="mt-2">Verification Status</h4>
+                    <div style="background: rgba(255,153,51,0.08); padding: 1rem; border-radius: 4px; border-left: 3px solid var(--color-accent-orange);">
+                        <p style="font-size: 9pt; line-height: 1.4; margin: 0;">
+                            <strong>This GHG inventory is a self-declared, unverified assertion</strong> compiled in accordance with ISO 14064-1:2018 and GHG Protocol standards. All emissions data have been calculated internally using approved methodologies and quality-assured through internal peer review processes.
+                        </p>
+                        <p style="font-size: 9pt; line-height: 1.4; margin: 0.5rem 0 0 0;">
+                            <strong>MIDOR has chosen not to pursue third-party verification at this time.</strong> If external assurance is required in the future for regulatory compliance or stakeholder requirements, this framework provides a robust foundation for verification under ISO 14064-3.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== APPENDIX F: ISO 14064-1 COMPLIANCE CROSS-REFERENCE ==================== -->
+    <div class="page">
+        <div class="content-dense">
+            <div class="section-header">
+                <span class="section-number">F</span>
+                <h2 class="mt-3">APPENDIX F: ISO 14064-1:2018 CLAUSE 9.3 COMPLIANCE CROSS-REFERENCE</h2>
+            </div>
+
+            <p style="font-size: 8pt; margin-bottom: var(--gap-md); line-height: 1.3;">
+                ISO 14064-1:2018 Clause 9.3.1 specifies mandatory content for GHG inventory reports (items a-t). This cross-reference table demonstrates how the MIDOR inventory addresses each requirement, facilitating verification and audit processes.
+            </p>
+
+            <table style="font-size: 6.5pt; height: calc(100% - 120px);">
+                <thead>
+                    <tr>
+                        <th style="width: 8%;">Clause</th>
+                        <th style="width: 38%;">ISO 14064-1:2018 Requirement</th>
+                        <th style="width: 28%;">Location in Report</th>
+                        <th style="width: 26%;">Notes / Key Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>9.3(a)</strong></td>
+                        <td>Description of the reporting organization</td>
+                        <td>Section 02.01 Background, Section 03 MIDOR at a Glance</td>
+                        <td>160,000 BPSD refinery, Mediterranean coast, major products, process units</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(b)</strong></td>
+                        <td>Responsible party for the GHG statement</td>
+                        <td>Section 04 Principles & Governance - Responsible Party Statement</td>
+                        <td>MIDOR Refinery management identified as responsible party</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(c)</strong></td>
+                        <td>Reporting period</td>
+                        <td>Executive Summary, Section 02.01, Cover page</td>
+                        <td>January 1 - December 31, 2024</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(d)</strong></td>
+                        <td>Organizational boundaries</td>
+                        <td>Executive Summary, Section 02.02 Boundaries</td>
+                        <td>Operational control approach; refinery fence line</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(e)</strong></td>
+                        <td>Reporting boundaries & significance criteria</td>
+                        <td>Section 02.02 Boundaries - Significance Criteria callout box</td>
+                        <td>≥1% threshold, ≥95% coverage target; Scope 3 Cat 7 & 11 included</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(f)</strong></td>
+                        <td>Direct GHG emissions quantified by gas (CO₂, CH₄, N₂O, etc.) in tCO₂e</td>
+                        <td>Section 03 Scope 1 - "Emissions by GHG Gas" table</td>
+                        <td>CO₂: 1,746,000 t (97%), CH₄: 1,613 t (2.5%), N₂O: 33 t (0.5%)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(g)</strong></td>
+                        <td>Biogenic CO₂ emissions and removals quantified separately</td>
+                        <td>Section 02.02 Boundaries - Biogenic CO₂ & GHG Removals callout</td>
+                        <td>Zero biogenic CO₂ (no biomass fuels)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(h)</strong></td>
+                        <td>Quantified direct GHG removals</td>
+                        <td>Section 02.02 Boundaries - Biogenic CO₂ & GHG Removals callout</td>
+                        <td>Zero removals (no CCUS, forests, or sinks)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(i)</strong></td>
+                        <td>Explanation of excluded GHG sources/sinks</td>
+                        <td>Section 02.02 Boundaries, Scope 3 categories table</td>
+                        <td>Scope 3 cats 1-6, 8-10, 12-15 excluded with justification</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(j)</strong></td>
+                        <td>Quantified indirect GHG emissions (by category) in tCO₂e</td>
+                        <td>Scope 2 & 3 section, detailed tables</td>
+                        <td>Scope 2: 199,898 tCO₂e (electricity); Scope 3: 16,926,521 tCO₂e</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(k)</strong></td>
+                        <td>Base year & base year inventory</td>
+                        <td>Section 02.04 Base Year, Executive Summary</td>
+                        <td>No base year selected; 2024 is reporting year only (unstable operations during revamps)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(l)</strong></td>
+                        <td>Base year recalculation & comparability limitations</td>
+                        <td>Section 02.04 Base Year</td>
+                        <td>5% materiality threshold defined; no base year established yet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(m)</strong></td>
+                        <td>Description of quantification approaches and rationale</td>
+                        <td>Section 02.03 Methodology, Appendix B Equations, Appendix C Activity Mapping</td>
+                        <td>IPCC methods, carbon mass balance, API fugitives, GHG Protocol Scope 3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(n)</strong></td>
+                        <td>Changes in quantification approaches vs. previous period</td>
+                        <td>Section 02.03 Methodology - "Methodology Changes" callout</td>
+                        <td>N/A - first inventory year</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(o)</strong></td>
+                        <td>Emission/removal factors used with sources</td>
+                        <td>Appendix B: Emission Factor Reference Table, equations</td>
+                        <td>IPCC AR6, API, DEFRA, EPA; site-specific fuel gas composition</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(p)</strong></td>
+                        <td>Assessment of uncertainty</td>
+                        <td>Section 09 Uncertainty & Quality - Uncertainty table</td>
+                        <td>Category-level uncertainties: ±2.5% to ±25%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(q)</strong></td>
+                        <td>Impact of uncertainty on accuracy of GHG inventory</td>
+                        <td>Section 09 - "Impact of Uncertainty on Inventory Accuracy" callout</td>
+                        <td>Scope 1: ±2.66%, Scope 2: ±11.18%, Scope 3: ±16.68%, Overall: ±14.17%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(r)</strong></td>
+                        <td>Statement of conformance with ISO 14064-1</td>
+                        <td>Cover page, Executive Summary, Credits & Standards page</td>
+                        <td>"ISO 14064-1:2018 | GHG Protocol Corporate Standard"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(s)</strong></td>
+                        <td>Disclosure of verification status and assurance level</td>
+                        <td>Executive Summary, Appendix E: Future Assurance</td>
+                        <td>Not yet verified; future ISO 14064-3 limited/reasonable assurance planned</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9.3(t)</strong></td>
+                        <td>GWP values and sources</td>
+                        <td>Section 02.03 Methodology - GWP table, Appendix B</td>
+                        <td>IPCC AR6 (2021): CO₂=1, CH₄=27.9, N₂O=273; 100-year horizon</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout-rect mt-2" style="font-size: 7pt; line-height: 1.3;">
+                <strong>✅ Compliance Status:</strong> This MIDOR GHG inventory addresses all 20 mandatory requirements (Clause 9.3 a-t) of ISO 14064-1:2018. The report is structured to facilitate third-party verification per ISO 14064-3 standards.
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart Initialization -->
+    <script src="assets/js/data.js"></script>
+    <script>
+        // Initialize charts for magazine layout
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scope 1 Pie Chart
+            if (document.getElementById('chart-scope1-pie')) {
+                const chart1 = echarts.init(document.getElementById('chart-scope1-pie'), null, {renderer: 'svg'});
+                chart1.setOption({
+                    title: {text: 'Scope 1 by Category', left: 'center', textStyle: {fontSize: 12, fontWeight: 600}},
+                    tooltip: {trigger: 'item'},
+                    series: [{
+                        type: 'pie',
+                        radius: '60%',
+                        data: [
+                            {value: 1170000, name: 'Stationary Combustion', itemStyle: {color: '#FF8C42'}},
+                            {value: 324000, name: 'Process Emissions', itemStyle: {color: '#004E89'}},
+                            {value: 216000, name: 'Fugitive Emissions', itemStyle: {color: '#00A3A3'}},
+                            {value: 90000, name: 'Mobile Combustion', itemStyle: {color: '#006B6B'}}
+                        ],
+                        label: {fontSize: 10}
+                    }]
+                });
+            }
+
+            // Scope 1 Bars
+            if (document.getElementById('chart-scope1-bars')) {
+                const chart2 = echarts.init(document.getElementById('chart-scope1-bars'), null, {renderer: 'svg'});
+                chart2.setOption({
+                    title: {text: 'Scope 1 Emissions by Category', left: 'center', textStyle: {fontSize: 12, fontWeight: 600}},
+                    tooltip: {trigger: 'axis'},
+                    xAxis: {type: 'category', data: ['Stationary', 'Process', 'Fugitive', 'Mobile'], axisLabel: {fontSize: 9}},
+                    yAxis: {type: 'value', axisLabel: {formatter: v => (v/1000)+'k', fontSize: 9}},
+                    series: [{
+                        type: 'bar',
+                        data: [1170000, 324000, 216000, 90000],
+                        itemStyle: {color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {offset: 0, color: '#00A3A3'},
+                            {offset: 1, color: '#006B6B'}
+                        ])},
+                        label: {show: true, position: 'top', fontSize: 9, formatter: v => (v.value/1000).toFixed(0)+'k'}
+                    }]
+                });
+            }
+
+            // Scope 2 Pie
+            if (document.getElementById('chart-scope2-pie')) {
+                const chart3 = echarts.init(document.getElementById('chart-scope2-pie'), null, {renderer: 'svg'});
+                chart3.setOption({
+                    title: {text: 'Scope 2 by Supplier', left: 'center', textStyle: {fontSize: 11, fontWeight: 600}},
+                    tooltip: {trigger: 'item'},
+                    series: [{
+                        type: 'pie',
+                        radius: '55%',
+                        data: [
+                            {value: 200000, name: 'MIDELEC', itemStyle: {color: '#00A3A3'}},
+                            {value: 50000, name: 'National Grid', itemStyle: {color: '#004E89'}}
+                        ],
+                        label: {fontSize: 9}
+                    }]
+                });
+            }
+        });
+    </script>
+
+    <script>
+    // Initialize Scope 1 Donut Chart
+    var chartScope1Donut = echarts.init(document.getElementById('chart_scope1_donut'));
+    var optionScope1Donut = {
+        title: { text: '', left: 'center' },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{b}: {c} tCO₂e ({d}%)'
+        },
+        legend: {
+            orient: 'horizontal',
+            bottom: '0%',
+            textStyle: { fontSize: 10, fontWeight: 'bold' }
+        },
+        series: [{
+            name: 'Scope 1',
+            type: 'pie',
+            radius: ['38%', '68%'],
+            center: ['50%', '42%'],
+            avoidLabelOverlap: true,
+            itemStyle: {
+                borderRadius: 8,
+                borderColor: '#fff',
+                borderWidth: 3
+            },
+            label: {
+                show: true,
+                formatter: '{b}\n{d}%',
+                fontSize: 10,
+                fontWeight: 'bold',
+                color: '#000'
+            },
+            labelLine: {
+                show: true,
+                length: 18,
+                length2: 12,
+                lineStyle: { width: 2 }
+            },
+            emphasis: {
+                label: { show: true, fontSize: 12, fontWeight: 'bold' }
+            },
+            data: [
+                { value: 2608831, name: 'Stationary Combustion', itemStyle: { color: '#FF6B6B' } },
+                { value: 200520, name: 'Process Emissions', itemStyle: { color: '#FFD93D' } },
+                { value: 3277, name: 'Fugitive Emissions', itemStyle: { color: '#6BCB77' } },
+                { value: 690, name: 'Mobile Combustion', itemStyle: { color: '#4D96FF' } }
+            ]
+        }]
+    };
+    chartScope1Donut.setOption(optionScope1Donut);
+
+    // Initialize Stationary Units Chart - REVERSED so highest is at TOP
+    var chartStationaryUnits = echarts.init(document.getElementById('chart_stationary_units'));
+    var optionStationaryUnits = {
+        title: { text: '', left: 'center' },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: { type: 'shadow' },
+            formatter: '{b}: {c} tCO₂e',
+            textStyle: { fontSize: 10 }
+        },
+        grid: { left: '38%', right: '12%', bottom: '5%', top: '3%', containLabel: true },
+        xAxis: {
+            type: 'value',
+            name: 'tCO₂e',
+            nameLocation: 'middle',
+            nameGap: 30,
+            nameTextStyle: { fontSize: 10, fontWeight: 'bold' },
+            axisLabel: { fontSize: 9.5, fontWeight: 'bold' }
+        },
+        yAxis: {
+            type: 'category',
+            data: ["U_07 heter firing", "U_08 heater firing", "U_09 heater firing", "U_11 heater firing", "U_11_cell3 heater firing", "U_18 heater firing", "U_19 heater firing", "U_20 heater firing", "U_21 heater firing", "U_37 boilers firing"],
+            axisLabel: { interval: 0, fontSize: 9.5, fontWeight: 'bold' }
+        },
+        series: [{
+            name: 'Emissions',
+            type: 'bar',
+            data: [162855.0, 165870.0, 168886.0, 171902.0, 174918.0, 177934.0, 180950.0, 183965.0, 186981.0, 189997.0],
+            itemStyle: { color: '#004e89' },
+            label: {
+                show: true,
+                position: 'right',
+                formatter: '{c}',
+                fontSize: 10,
+                fontWeight: 'bold',
+                color: '#000'
+            },
+            barWidth: '65%'
+        }]
+    };
+    chartStationaryUnits.setOption(optionStationaryUnits);
+
+    // Make charts responsive
+    window.addEventListener('resize', function() {
+        if (chartScope1Donut) chartScope1Donut.resize();
+        if (chartStationaryUnits) chartStationaryUnits.resize();
+    });
+    </script>
+    \n
+
+</body>
+</html>
